@@ -1,5 +1,5 @@
 import AboutSection from "@/components/AboutSection";
-import { ABOUT_TEXT, ABOUT_TITLE } from "@/constants";
+import { ABOUT_TEXT, ABOUT_TITLE } from "@constants";
 
 export default function Page() {
   return (

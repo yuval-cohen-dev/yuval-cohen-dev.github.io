@@ -4,7 +4,7 @@ import {
   LANGUAGE,
   LINK_TAGS,
   META_TAGS
-} from "@/constants";
+} from "@constants";
 import { LinkTagType, MetaTagType } from "@/types/types";
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";

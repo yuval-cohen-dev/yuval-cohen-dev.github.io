@@ -12,7 +12,7 @@ import {
   SocialLinkItem,
   VideoData,
   VideoItem
-} from "@/types";
+} from "@types";
 import { Manifest } from "next/dist/lib/metadata/types/manifest-types";
 
 import HERO_JPG from "../public/static/images/hero.jpg";
@@ -276,8 +276,8 @@ export const PROJECTS: ProjectItem[] = [
 
 export const CONTACT_TITLE = "CONTACT ME";
 export const CONTACT_DESCRIPTION = `
-    I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out via email. 
-    You can also connect with me on GitHub and LinkedIn, or use the form below to send a message. 
+    I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out via email.
+    You can also connect with me on GitHub and LinkedIn, or use the form below to send a message.
     Let’s talk!
 `;
 

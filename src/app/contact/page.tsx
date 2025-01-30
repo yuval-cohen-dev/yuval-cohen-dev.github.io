@@ -1,5 +1,5 @@
 import ContactForm from "@/components/ContactForm";
-import { CONTACT_DESCRIPTION, CONTACT_TITLE } from "@/constants";
+import { CONTACT_DESCRIPTION, CONTACT_TITLE } from "@constants";
 
 export default function Page() {
   return (

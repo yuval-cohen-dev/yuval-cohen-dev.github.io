@@ -13,7 +13,7 @@ import {
   LOGO_TEXT,
   MENU_ITEMS,
   METADATA
-} from "@/constants";
+} from "@constants";
 import AppHeader from "@/components/header/AppHeader";
 import NavigationBar from "@/components/header/NavigationBar";
 
