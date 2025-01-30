@@ -21,7 +21,7 @@ jobs:
           node-version: 'latest'
 
       - name: Installing my packages
-        run: npm ci --omit=dev  
+        run: npm install
 
       - name: Extract repository name
         run: echo "BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
