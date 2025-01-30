@@ -1,15 +1,17 @@
 .git
 .github
-.next
-.env
-.env.*
-node_modules
-.swc
+.devcontainer
 .vscode
 .docker
-coverage
 
-.git
+.env
+.env.*
+.next
+.swc
+
+dist
+coverage
+cache
 *Dockerfile*
 *docker-compose*
 node_modules

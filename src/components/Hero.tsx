@@ -6,7 +6,7 @@ export default function Hero({
   text,
   description,
   children,
-  alt,
+  alt
 }: {
   backgroundImage: any;
   text: string;
@@ -15,7 +15,10 @@ export default function Hero({
   alt: string;
 }) {
   return (
-    <div id="hero" className="relative h-screen bg-cover bg-center">
+    <div
+      id="hero"
+      className="relative h-screen bg-cover bg-center"
+    >
       <div className="absolute top-0 left-0 w-full h-full">
         <Image
           src={backgroundImage}
@@ -27,14 +30,14 @@ export default function Hero({
           style={{
             userSelect: "none",
             pointerEvents: "none",
-            zIndex: 0,
+            zIndex: 0
           }} // Make sure the background image is behind content
         />
       </div>
       <div
         style={{
           position: "relative",
-          zIndex: 1,
+          zIndex: 1
         }}
       >
         <Motion
@@ -47,7 +50,7 @@ export default function Hero({
           <div
             style={{
               userSelect: "none",
-              pointerEvents: "none",
+              pointerEvents: "none"
             }}
           >
             <Motion

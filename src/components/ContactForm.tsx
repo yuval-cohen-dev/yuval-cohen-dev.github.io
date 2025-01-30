@@ -2,13 +2,16 @@ import Link from "next/link";
 
 export default function ContactForm({
   title,
-  description,
+  description
 }: {
   title: string;
   description: string;
 }) {
   return (
-    <section id="contact" className="py-20 px-8 bg-gray-900">
+    <section
+      id="contact"
+      className="py-20 px-8 bg-gray-900"
+    >
       <h2 className="text-3xl font-extrabold mb-6 text-center text-white">
         {title}
       </h2>
@@ -18,9 +21,16 @@ export default function ContactForm({
 
       {/* Contact Form */}
       <div className="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
-        <form action="#" method="POST" className="space-y-6">
+        <form
+          action="#"
+          method="POST"
+          className="space-y-6"
+        >
           <div>
-            <label htmlFor="name" className="block text-white text-lg">
+            <label
+              htmlFor="name"
+              className="block text-white text-lg"
+            >
               Name
             </label>
             <input
@@ -34,7 +44,10 @@ export default function ContactForm({
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-white text-lg">
+            <label
+              htmlFor="email"
+              className="block text-white text-lg"
+            >
               Email*
             </label>
             <input
@@ -48,7 +61,10 @@ export default function ContactForm({
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-white text-lg">
+            <label
+              htmlFor="message"
+              className="block text-white text-lg"
+            >
               Message
             </label>
             <textarea

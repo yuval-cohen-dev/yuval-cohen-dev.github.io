@@ -5,7 +5,7 @@ type Handler = (event: any) => void;
 
 export default function useOnClickOutside<T extends HTMLElement = HTMLElement>(
   ref: RefObject<T>,
-  handler: Handler,
+  handler: Handler
 ) {
   useEffect(() => {
     const listener: Handler = (event) => {

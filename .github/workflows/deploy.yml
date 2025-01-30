@@ -3,47 +3,25 @@ name: Build and Deploy to Prod
 on:
   push:
     branches:
-      - main # Replace with your source branch name (e.g., 'dev' or 'main')
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Run codespell on source code
-        uses: codespell-project/actions-codespell@v2
-        with:
-          skip: "*.fits"
-          ignore_words_file: .codespellignore
-          path: punchbowl
-
-      # Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use the appropriate Node.js version for your project
-
-      - name: Install Dependencies
-        run: npm run test
-
-      - name: Install Dependencies
-        run: npm run prestart
-
-      - name: Install Dependencies
-        run: npm run format
+          node-version: 22
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build Static Site
         run: npm run build
-
-      - name: Build Static Site
-        run: npm run postbuild
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

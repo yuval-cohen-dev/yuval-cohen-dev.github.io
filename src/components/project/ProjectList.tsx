@@ -27,7 +27,10 @@ export default function ProjectList({ projects }: { projects: ProjectItem[] }) {
       >
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <div key={`project_${index}`} className="">
+            <div
+              key={`project_${index}`}
+              className=""
+            >
               <ProjectCard project={project} />
             </div>
           ))}

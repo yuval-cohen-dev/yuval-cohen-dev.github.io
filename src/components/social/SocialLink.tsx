@@ -6,7 +6,7 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
-  FaFacebook,
+  FaFacebook
 } from "react-icons/fa";
 
 const ICONS: Record<string, React.ElementType> = {
@@ -14,7 +14,7 @@ const ICONS: Record<string, React.ElementType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
   twitter: FaTwitter,
-  facebook: FaFacebook,
+  facebook: FaFacebook
 };
 
 const COLORS: Record<string, string> = {
@@ -22,14 +22,14 @@ const COLORS: Record<string, string> = {
   github: "bg-black hover:bg-gray-800",
   linkedin: "bg-blue-700 hover:bg-blue-800",
   twitter: "bg-blue-400 hover:bg-blue-500",
-  facebook: "bg-blue-600 hover:bg-blue-700",
+  facebook: "bg-blue-600 hover:bg-blue-700"
 };
 
 const isValidSocial = (name: string): name is keyof typeof ICONS =>
   name in ICONS;
 
 export default function SocialLink({
-  socialLinkItem,
+  socialLinkItem
 }: {
   socialLinkItem: SocialLinkItem;
 }) {

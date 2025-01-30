@@ -13,10 +13,10 @@
 /.next/
 /out/
 
-coverage
-# production
+dist/
 .swc
 /build
+.husky._/
 
 # misc
 .DS_Store

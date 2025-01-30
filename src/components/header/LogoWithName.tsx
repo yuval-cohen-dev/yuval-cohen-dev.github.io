@@ -13,17 +13,23 @@ const LogoWithName: React.FC<LogoWithNameProps> = ({
   height = 40,
   name = "",
   src,
-  alt,
+  alt
 }) => {
   return (
     <div
       className="flex items-center"
       style={{
         userSelect: "none",
-        pointerEvents: "none",
+        pointerEvents: "none"
       }}
     >
-      <Image src={src} alt={alt} width={width} height={height} style={{}} />
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        style={{}}
+      />
       {/* text-2xl font-extrabold text-white */}
       <span className="ml-2 text-lg font-bold">{name}</span>
     </div>

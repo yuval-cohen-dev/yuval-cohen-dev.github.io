@@ -2,28 +2,32 @@
 
 import {
   PHASE_DEVELOPMENT_SERVER,
-  PHASE_PRODUCTION_BUILD,
+  PHASE_PRODUCTION_BUILD
 } from "next/constants";
 import type { NextConfig } from "next";
 import JavaScriptObfuscator from "webpack-obfuscator";
-import withPWA from "next-pwa"; // Import next-pwa plugin
+import withPWA from "next-pwa";
 
-const isDebuggerEnabled = process.env.DEBUGGER === "true";
-const debuggerPort = process.env.DEBUGGER_PORT || "9229";
-const debuggerHost = process.env.DEBUGGER_HOST || "localhost";
+const BUILD_DIR = "dist";
 
 const withPwaConfig = withPWA({
-  dest: "public", // Output directory for service worker and assets
+  dest: `public`,
+  disable: process.env.NODE_ENV === "development",
+  register: true
 });
 
 const config = async (
   phase: string,
-  { defaultConfig }: { defaultConfig: NextConfig },
+  { defaultConfig }: { defaultConfig: NextConfig }
 ) => {
   /**
    * @type {import('next').NextConfig}
    */
+  let phaseConfig: NextConfig = {};
   const nextConfig: NextConfig = {
+    env: {
+      NEXT_TELEMETRY_DISABLED: 1
+    },
     reactStrictMode: true,
     compress: true,
     staticPageGenerationTimeout: 60,
@@ -51,72 +55,63 @@ const config = async (
       return config;
     },
     eslint: {
-      // ignoreDuringBuilds:true
+      ignoreDuringBuilds: false
     },
     compiler: {
       removeConsole: process.env.NODE_ENV === "production",
+      styledComponents: true,
+      styledJsx: {
+        useLightningcss: true
+      }
     },
+    typescript: {
+      ignoreBuildErrors: false
+    }
   };
 
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    const devConfig: NextConfig = {
-      ...nextConfig,
+    phaseConfig = {
       webpack(config, context) {
         nextConfig.webpack(config, context);
-        if (isDebuggerEnabled && context.dev) {
-          // Modify Node.js process to start with debugging enabled
-          // You can add more logic here if you want to handle other aspects of the debugger.
-          config.node = {
-            ...config.node,
-            debug: true, // Enable debugging for Node.js
-          };
-
-          // Optionally, you can also configure how the dev server behaves if necessary
-          config.devServer = {
-            ...config.devServer,
-            before(app) {
-              // If the debugger is enabled, make sure it starts the server with debugging
-              app.listen(debuggerPort, debuggerHost, () => {
-                console.log(
-                  `Debugger connected at ${debuggerHost}:${debuggerPort}`,
-                );
-              });
-            },
-          };
-        }
         return config;
-      },
+      }
     };
-    return withPwaConfig(devConfig);
   }
+
   if (phase === PHASE_PRODUCTION_BUILD) {
-    const prodConfig: NextConfig = {
-      ...nextConfig,
+    phaseConfig = {
       output: "export",
       skipTrailingSlashRedirect: true,
       trailingSlash: true,
-      distDir: "dist",
+      distDir: BUILD_DIR,
       images: {
-        unoptimized: true,
+        unoptimized: true
       },
-
       productionBrowserSourceMaps: false,
       webpack(config, context) {
         nextConfig.webpack(config, context);
         config.plugins.push(
           new JavaScriptObfuscator(
             {
-              rotateStringArray: true,
+              rotateStringArray: true
             },
-            [],
-          ),
+            []
+          )
         );
         return config;
-      },
+      }
     };
-    return withPwaConfig(prodConfig);
   }
-  return withPwaConfig(nextConfig);
+
+  const setupConfig: NextConfig = {
+    ...nextConfig,
+    ...phaseConfig
+  };
+
+  if (phase === PHASE_PRODUCTION_BUILD) {
+    return withPwaConfig(setupConfig);
+  }
+  return setupConfig;
 };
 
 export default config;

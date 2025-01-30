@@ -17,10 +17,19 @@ export const Motion = <Tag extends keyof JSX.IntrinsicElements>({
   ...props
 }: CustomMotionProps<Tag>) => {
   const Component = type ? (motion as any)[type] : motion.div;
+  const NoScriptComponent = type ? type : "div";
   return (
-    <Component className={className} {...props}>
-      {children}
-    </Component>
+    <>
+      {/* <noscript>
+        <NoScriptComponent className={className} {...props}>{children}</NoScriptComponent>
+      </noscript> */}
+      <Component
+        className={className}
+        {...props}
+      >
+        {children}
+      </Component>
+    </>
   );
 };
 

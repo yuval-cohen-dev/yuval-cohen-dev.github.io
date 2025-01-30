@@ -12,7 +12,7 @@ import {
   LOGO_IMAGE,
   LOGO_TEXT,
   MENU_ITEMS,
-  METADATA,
+  METADATA
 } from "@/constants";
 import AppHeader from "@/components/header/AppHeader";
 import NavigationBar from "@/components/header/NavigationBar";
@@ -21,7 +21,7 @@ const inter = INTER;
 export const metadata: Metadata = METADATA;
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -36,10 +36,14 @@ export default function RootLayout({
                 flex: 1,
                 flexDirection: "row",
                 alignItems: "center",
-                justifyContent: "space-between",
+                justifyContent: "space-between"
               }}
             >
-              <LogoWithName alt={LOGO_ALT} name={LOGO_TEXT} src={LOGO_IMAGE} />
+              <LogoWithName
+                alt={LOGO_ALT}
+                name={LOGO_TEXT}
+                src={LOGO_IMAGE}
+              />
               <NavigationBar menuItems={MENU_ITEMS} />
             </div>
           </AppHeader>

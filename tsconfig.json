@@ -20,7 +20,7 @@
     "allowImportingTsExtensions": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@constants": ["./src/constants.ts"],
+      "@constants": ["./src/lib/constants.ts"],
       "@types": ["./src/types/types.ts"],
       "@Motion": ["./src/components/Motion.tsx"]
     },

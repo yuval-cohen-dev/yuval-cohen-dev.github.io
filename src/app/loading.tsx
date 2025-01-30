@@ -24,7 +24,11 @@ export default function Loading() {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <circle cx="12" cy="12" r="10" />
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
           <path d="M12 2a10 10 0 0 1 10 10h-2a8 8 0 0 0-8-8V2z" />
         </svg>
         <p className="mt-4 text-lg font-semibold text-gray-200 dark:text-gray-300">

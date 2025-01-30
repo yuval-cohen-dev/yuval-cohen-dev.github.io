@@ -1,13 +1,14 @@
 FROM node:20-slim AS deps
 
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 RUN npm install
 
 FROM node:20-slim AS builder
 COPY --from=deps /node_modules ./node_modules
+COPY --from=deps /package.json ./package.json
+COPY --from=deps /package-lock.json ./package-lock.json
 COPY . .
 
-RUN npm run disable
 RUN npm run lint && npm run test
 RUN npm run build
 
@@ -19,13 +20,12 @@ COPY --from=builder /node_modules ./node_modules
 COPY --from=builder /package.json ./package.json
 COPY --from=builder /public /public
 
+# RUN npm install --prefer-offline 
+# COPY --chown=node:node package*.json ./
+# RUN npm ci --omit=dev && npm cache clean --force
+# ENV PATH=/app/node_modules/.bin:$PATH
+# RUN npm ci --omit=dev && npm cache clean --force
 
-ARG PORT=3000
-ENV PORT=$PORT
-
-EXPOSE $PORT 9229 9230
-
-CMD ["npm", "start"]
 
 # RUN npm install -g http-server
 
@@ -44,7 +44,7 @@ CMD ["npm", "start"]
 
 # # Install dependencies with npm
 # # Use --prefer-offline to speed up the installation process
-# RUN npm install
+# RUN npm install --prefer-offline 
 
 # RUN npx next telemetry disable
 

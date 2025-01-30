@@ -1,0 +1,15 @@
+{
+  "MSFT Copyright Header": {
+    "scope": "javascript,typescript,css,rust",
+    "prefix": ["copyright"],
+    "body": [
+      "/*---------------------------------------------------------------------------------------------",
+      " *  Copyright (c) Yuval Cohen. All rights reserved.",
+      " *  Licensed. See LICENSE in the project root for license information.",
+      " *--------------------------------------------------------------------------------------------*/",
+      "",
+      "$0"
+    ],
+    "description": "Insert Copyright Statement"
+  }
+}

@@ -8,7 +8,10 @@ export default function ProjectCard({ project }: { project: ProjectItem }) {
       <h3 className="text-xl font-semibold text-white">{title}</h3>
       <p className="text-gray-400 mt-2">{description}</p>
       <div className="mt-4 flex justify-between items-center">
-        <Link href={link} className="text-blue-500 hover:underline">
+        <Link
+          href={link}
+          className="text-blue-500 hover:underline"
+        >
           GitHub
         </Link>
         {project.demoLink && (

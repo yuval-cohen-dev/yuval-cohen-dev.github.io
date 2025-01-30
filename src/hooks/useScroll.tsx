@@ -7,7 +7,7 @@ export default function useScroll() {
   const isScrolling = useRef({ x: false, y: false, general: false });
   const lastScrollDirection = useRef({
     x: null as "left" | "right" | null,
-    y: null as "up" | "down" | null,
+    y: null as "up" | "down" | null
   });
   const scrollPercentage = useRef({ x: 0, y: 0 });
   const listeners = useRef(
@@ -23,7 +23,7 @@ export default function useScroll() {
         scrollPercentageX: number;
         scrollPercentageY: number;
       }) => void
-    >(),
+    >()
   );
   const scrollEndTimeout = useRef<NodeJS.Timeout | null>(null);
   const TIMEOUT = 150;
@@ -39,7 +39,7 @@ export default function useScroll() {
     isScrolling.current = {
       x: isScrollingX,
       y: isScrollingY,
-      general: isScrollingX || isScrollingY,
+      general: isScrollingX || isScrollingY
     };
 
     lastScrollDirection.current = {
@@ -52,7 +52,7 @@ export default function useScroll() {
         ? currentY > scrollPosition.current.y
           ? "down"
           : "up"
-        : null,
+        : null
     };
 
     scrollPosition.current = { x: currentX, y: currentY };
@@ -63,7 +63,7 @@ export default function useScroll() {
       document.documentElement.scrollHeight - window.innerHeight;
     scrollPercentage.current = {
       x: scrollableWidth > 0 ? (currentX / scrollableWidth) * 100 : 0,
-      y: scrollableHeight > 0 ? (currentY / scrollableHeight) * 100 : 0,
+      y: scrollableHeight > 0 ? (currentY / scrollableHeight) * 100 : 0
     };
 
     if (isScrolling.current.general || wasScrolling) {
@@ -77,7 +77,7 @@ export default function useScroll() {
           directionX: lastScrollDirection.current.x,
           directionY: lastScrollDirection.current.y,
           scrollPercentageX: scrollPercentage.current.x,
-          scrollPercentageY: scrollPercentage.current.y,
+          scrollPercentageY: scrollPercentage.current.y
         });
       });
     }
@@ -96,7 +96,7 @@ export default function useScroll() {
           directionX: null,
           directionY: null,
           scrollPercentageX: scrollPercentage.current.x,
-          scrollPercentageY: scrollPercentage.current.y,
+          scrollPercentageY: scrollPercentage.current.y
         });
       });
     }, TIMEOUT);
@@ -125,21 +125,21 @@ export default function useScroll() {
         directionY: "up" | "down" | null;
         scrollPercentageX: number;
         scrollPercentageY: number;
-      }) => void,
+      }) => void
     ) => {
       listeners.current.add(listener);
       return () => {
         listeners.current.delete(listener);
       };
     },
-    [],
+    []
   );
 
   const scrollToPosition = useCallback(
     (x: number, y: number, behavior: ScrollBehavior = "smooth") => {
       window.scrollTo({ left: x, top: y, behavior });
     },
-    [],
+    []
   );
 
   return {
@@ -150,6 +150,6 @@ export default function useScroll() {
     isScrollingY: () => isScrolling.current.y,
     getScrollDirection: () => lastScrollDirection.current,
     addScrollListener,
-    scrollToPosition,
+    scrollToPosition
   };
 }

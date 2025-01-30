@@ -12,7 +12,7 @@ import {
   GITHUB_LINK,
   CONTACT_DESCRIPTION,
   CONTACT_TITLE,
-  HERO_IMAGE_ALT,
+  HERO_IMAGE_ALT
 } from "@constants";
 import ScrollTopButton from "@/components/ScrollTopButton";
 import Hero from "@/components/Hero";
@@ -87,7 +87,10 @@ export default function Home() {
         transition={{ duration: 1.5, ease: "easeInOut" }}
         viewport={{ once: false }}
       >
-        <AboutSection text={ABOUT_TEXT} title={ABOUT_TITLE} />
+        <AboutSection
+          text={ABOUT_TEXT}
+          title={ABOUT_TITLE}
+        />
       </Motion>
 
       <Motion
@@ -98,7 +101,10 @@ export default function Home() {
         transition={{ duration: 1.5, ease: "easeInOut" }}
         viewport={{ once: false }}
       >
-        <ContactForm title={CONTACT_TITLE} description={CONTACT_DESCRIPTION} />
+        <ContactForm
+          title={CONTACT_TITLE}
+          description={CONTACT_DESCRIPTION}
+        />
         <SocialLinks socialLinks={SOCIAL_LINKS} />
       </Motion>
 

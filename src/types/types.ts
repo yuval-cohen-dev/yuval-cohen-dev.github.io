@@ -1,3 +1,6 @@
+import { Languages } from "next/dist/lib/metadata/types/alternative-urls-types";
+import { Videos } from "next/dist/lib/metadata/types/metadata-types";
+
 export type MetaTagType = {
   name?: string;
   property?: string;
@@ -75,4 +78,46 @@ export type OpenGraphProfile = {
 export type MenuItem = {
   name: string;
   link: string;
+};
+
+export type SitemapType = {
+  url: string;
+  lastModified?: string | Date | undefined;
+  changeFrequency?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never"
+    | undefined;
+  priority?: number | undefined;
+  alternates?:
+    | {
+        languages?: Languages<string> | undefined;
+      }
+    | undefined;
+  images?: string[] | undefined;
+  videos?: Videos[] | undefined;
+};
+
+export type SitemapFile = Array<SitemapType>;
+
+export type RobotsFile = {
+  rules:
+    | {
+        userAgent?: string | string[] | undefined;
+        allow?: string | string[] | undefined;
+        disallow?: string | string[] | undefined;
+        crawlDelay?: number | undefined;
+      }
+    | Array<{
+        userAgent: string | string[];
+        allow?: string | string[] | undefined;
+        disallow?: string | string[] | undefined;
+        crawlDelay?: number | undefined;
+      }>;
+  sitemap?: string | string[] | undefined;
+  host?: string | undefined;
 };

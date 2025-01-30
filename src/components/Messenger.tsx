@@ -50,7 +50,7 @@ export default function Messenger() {
     addTags: null,
     removeTags: null,
     secureMode: null,
-    customStyle: null,
+    customStyle: null
   };
   return (
     <>
@@ -66,7 +66,7 @@ export default function Messenger() {
                         s1.setAttribute('crossorigin','*');
                         s0.parentNode.insertBefore(s1,s0);
                     })();
-                `,
+                `
         }}
       />
       <TawkMessengerReact

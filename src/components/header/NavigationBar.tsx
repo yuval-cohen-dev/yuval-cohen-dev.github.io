@@ -3,7 +3,7 @@ import Motion from "@Motion";
 import Link from "next/link";
 
 export default function NavigationBar({
-  menuItems,
+  menuItems
 }: {
   menuItems: MenuItem[];
 }) {

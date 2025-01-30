@@ -1,13 +1,11 @@
 services:
   devcontainer:
-    build:
-      args:
-        - HOME=/home
-        - WORKSPACE=/workspace
-        - GROUP=devgroup
-        - GROUP_ID=1000
-        - USER=dev
-        - USER_ID=1000
-        - USER_PASSWORD=1
-        - BASE_IMAGE=ubuntu:latest
-        - USERNAME=dev
+    environment:
+      - HUSKY=1
+      - NEXT_TELEMETRY_DISABLED=1
+      # - node_modules:/workspace/node_modules
+      # - package-lock.json:/workspace/package-lock.json
+
+volumes:
+  node_modules:
+    driver: local

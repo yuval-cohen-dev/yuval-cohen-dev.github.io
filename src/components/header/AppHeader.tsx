@@ -1,6 +1,6 @@
 import Motion from "@Motion";
 export default function AppHeader({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -13,7 +13,7 @@ export default function AppHeader({
       transition={{ duration: 0.5, ease: "easeOut" }}
       style={{
         display: "block",
-        wordWrap: "break-word",
+        wordWrap: "break-word"
       }}
     >
       {children}

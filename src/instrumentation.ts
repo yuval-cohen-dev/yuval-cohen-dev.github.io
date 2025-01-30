@@ -2,7 +2,7 @@ import { WebTracerProvider } from "@opentelemetry/sdk-trace-web";
 import {
   BatchSpanProcessor,
   ConsoleSpanExporter,
-  SimpleSpanProcessor,
+  SimpleSpanProcessor
 } from "@opentelemetry/sdk-trace-base";
 
 export async function register() {
@@ -10,7 +10,7 @@ export async function register() {
     return;
   }
   const provider = new WebTracerProvider({
-    spanProcessors: [new BatchSpanProcessor(new ConsoleSpanExporter())],
+    spanProcessors: [new BatchSpanProcessor(new ConsoleSpanExporter())]
   });
   provider.register();
 }

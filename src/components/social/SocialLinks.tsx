@@ -2,7 +2,7 @@ import { SocialLinkItem } from "@/types/types";
 import SocialLink from "./SocialLink";
 
 export default function SocialLinks({
-  socialLinks,
+  socialLinks
 }: {
   socialLinks: SocialLinkItem[];
 }) {

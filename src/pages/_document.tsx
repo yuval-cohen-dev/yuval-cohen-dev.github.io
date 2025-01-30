@@ -3,7 +3,7 @@ import {
   JSON_LD_SCHEMA,
   LANGUAGE,
   LINK_TAGS,
-  META_TAGS,
+  META_TAGS
 } from "@/constants";
 import { LinkTagType, MetaTagType } from "@/types/types";
 import { Html, Head, Main, NextScript } from "next/document";
@@ -13,7 +13,10 @@ function generateMetaTags({ metaTags }: { metaTags: MetaTagType[] }) {
   return (
     <>
       {metaTags.map((metaTag, index) => (
-        <meta key={`meta_tag_${index}`} {...metaTag} />
+        <meta
+          key={`meta_tag_${index}`}
+          {...metaTag}
+        />
       ))}
     </>
   );
@@ -23,7 +26,10 @@ function generateLinksTags({ linkTags }: { linkTags: LinkTagType[] }) {
   return (
     <>
       {linkTags.map((link, index) => (
-        <link key={`link_tag_${index}`} {...link} />
+        <link
+          key={`link_tag_${index}`}
+          {...link}
+        />
       ))}
     </>
   );
@@ -35,8 +41,15 @@ export default function Document() {
   return (
     <Html lang={LANGUAGE}>
       <Head>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link
+          rel="shortcut icon"
+          href="/favicon.ico"
+          type="image/x-icon"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+        />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -78,7 +91,10 @@ export default function Document() {
           href="/apple-touch-icon-180x180.png"
         />
         <noscript>
-          <meta http-equiv="refresh" content="0;url=/no-javascript" />
+          <meta
+            http-equiv="refresh"
+            content="0;url=/no-javascript"
+          />
         </noscript>
         <noscript>
           <p>
@@ -110,7 +126,7 @@ export default function Document() {
                       gtag('config', '${GOOGLE_ANALYTICS_ID}', {
                           page_path: window.location.pathname,
                       });
-                  `,
+                  `
           }}
         />
       </Head>

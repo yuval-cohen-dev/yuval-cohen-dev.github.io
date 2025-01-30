@@ -38,7 +38,7 @@ export default function ScrollTopButton({ threshold = 50 }) {
           style={{
             position: "fixed",
             bottom: "15%",
-            right: "1.5%",
+            right: "1.5%"
             // backgroundColor:"red"
           }}
           aria-label="Scroll to top"
@@ -53,7 +53,7 @@ export default function ScrollTopButton({ threshold = 50 }) {
             aria-label="Scroll to top"
             style={{
               display: "flex",
-              flex: 1,
+              flex: 1
             }}
           >
             <svg

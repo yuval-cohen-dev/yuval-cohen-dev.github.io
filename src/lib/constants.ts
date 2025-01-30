@@ -11,11 +11,13 @@ import {
   ProjectItem,
   SocialLinkItem,
   VideoData,
-  VideoItem,
-} from "./types/types";
+  VideoItem
+} from "@/types";
+import { Manifest } from "next/dist/lib/metadata/types/manifest-types";
 
-import HERO_JPG from "../public/images/hero.jpg";
-import LOGO_PNG from "../public/images/logo.png";
+import HERO_JPG from "../public/static/images/hero.jpg";
+import LOGO_PNG from "../public/static/images/logo.png";
+import { RobotsFile, SitemapFile } from "@/types/types";
 
 export const FIRST_NAME = "Yuval";
 export const LAST_NAME = "Cohen";
@@ -34,7 +36,57 @@ export const WEB_DOMAIN_URL = `https://${DOMAIN}`;
 export const SITE_TITLE = "";
 export const SITE_DESCRIPTION = "";
 
-// Assets
+export const MANIFEST: Manifest = {
+  id: "/",
+  name: "yuval cohen portfolio",
+  short_name: "yuval cohen cv",
+  description: "web portfolio",
+  start_url: "/",
+  display: "standalone",
+  orientation: "portrait",
+  icons: []
+};
+export const SITEMAP_FILE: SitemapFile = [];
+export const ROBOTS: RobotsFile = {
+  rules: {
+    userAgent: "*",
+    allow: "/"
+  },
+  sitemap: "https://www.yuval-cohen/sitemap.xml"
+};
+
+export const ROBOTS_TXT_OPTIONS = {
+  policies: [
+    {
+      userAgent: "*",
+      allow: ["/"]
+    },
+    {
+      userAgent: "test-bot",
+      allow: ["/"]
+    },
+    {
+      userAgent: "black-listed-bot",
+      disallow: ["/"]
+    }
+  ],
+  additionalSitemaps: [
+    // 'https://example.com/my-custom-sitemap-1.xml',
+  ]
+};
+
+export const SITE_URL = "https://yuval-cohen.com";
+export const CHANGE_FREQUENCY = "daily";
+export const PRIORITY = 0.7;
+export const SITEMAP_SIZE = 5000;
+export const GENERATE_ROBOTS_TXT = true;
+export const EXCLUDE_PAGES = [];
+export const ALTERNATE_REFS = [
+  {
+    href: "https://he.yuval-cohen.com",
+    hreflang: "he"
+  }
+];
 
 export const IMAGES: Record<string, ImageItem> = {
   favicon: {
@@ -42,45 +94,45 @@ export const IMAGES: Record<string, ImageItem> = {
     width: 48,
     height: 48,
     alt: "",
-    type: "image/icon",
+    type: "image/icon"
   },
   logo: {
-    url: "/images/logo.png",
+    url: "/static/images/icon.png",
     width: 48,
     height: 48,
     alt: "portfolio logo",
-    type: "image/png",
+    type: "image/png"
   },
   hero: {
-    url: "/images/hero.jpg",
+    url: "/static/images/hero.jpg",
     width: 3000,
     height: 3000,
     alt: "hero background",
-    type: "image/jpg",
-  },
+    type: "image/jpg"
+  }
 };
 
 const heroImageItem: ImageItem = {
-  url: "/images/hero.jpg",
+  url: "/static/images/hero.jpg",
   width: 3000,
   height: 3000,
   alt: "hero background",
-  type: "image/jpg",
+  type: "image/jpg"
 };
 
 const logoImageItem: ImageItem = {
-  url: "/images/logo.png",
+  url: "/static/images/logo.png",
   width: 48,
   height: 48,
   alt: "portfolio logo",
-  type: "image/png",
+  type: "image/png"
 };
 const faviconImageItem: ImageItem = {
   url: "/favicon.ico",
   width: 48,
   height: 48,
   alt: "",
-  type: "image/icon",
+  type: "image/icon"
 };
 
 export const LANGUAGE = "en";
@@ -88,12 +140,12 @@ export const INTER = Inter({
   subsets: ["latin"],
   preload: true,
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-inter"
 });
 
 const ICONS = {
   icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
-  apple: [{ url: "/apple-icon.png" }],
+  apple: [{ url: "/apple-icon.png" }]
 };
 
 export const METADATA_TITLE: string = `${FULL_NAME}'s Portfolio`;
@@ -104,9 +156,9 @@ export const METADATA: Metadata = {
   description: METADATA_DESCRIPTION,
   //   assets: "https://yuval-cohen.com/images",
   openGraph: {
-    type: "website",
+    type: "website"
   },
-  twitter: {},
+  twitter: {}
 };
 
 export const LINK_TAGS: LinkTagType[] = [];
@@ -163,14 +215,14 @@ export const JSON_LD_SCHEMA = {
   description: "Portfolio",
   contactPoint: {
     "@type": "ContactPoint",
-    email: GMAIL_LINK,
-  },
+    email: GMAIL_LINK
+  }
 };
 
 export const IMAGE_ITEMS: ImageItem[] = [
   heroImageItem,
   logoImageItem,
-  faviconImageItem,
+  faviconImageItem
 ];
 
 export const AUDIO_ITEMS: AudioItem[] = [];
@@ -183,19 +235,19 @@ export const YEAR = new Date().getUTCFullYear();
 export const OPEN_GRAPH_PROFILES: OpenGraphProfile = {
   firstName: FIRST_NAME,
   lastName: LAST_NAME,
-  username: USERNAME,
+  username: USERNAME
 };
 
 export const LOGO_ALT: string = "logo";
 export const LOGO_TEXT: string = `${FULL_NAME}`;
 
-export const LOGO_IMAGE = "/images/logo.png"; //LOGO_PNG ;
-export const HERO_IMAGE = "/images/hero.jpg"; // HERO_JPG;
+export const LOGO_IMAGE = "/static/images/logo.png"; //LOGO_PNG ;
+export const HERO_IMAGE = "/static/images/hero.jpg"; // HERO_JPG;
 
 export const MENU_ITEMS: MenuItem[] = [
   { name: "Projects", link: "#projects" },
   { name: "About", link: "#about" },
-  { name: "Contact", link: "#contact" },
+  { name: "Contact", link: "#contact" }
 ];
 export const FOOTER_TEXT = `© ${YEAR} ${FULL_NAME}. All rights reserved.`;
 
@@ -212,14 +264,14 @@ export const PROJECTS: ProjectItem[] = [
   {
     title: "PyMicroservicesBase",
     description: "",
-    link: "https://github.com/cohenyuval315/PyMicroservicesBase",
+    link: "https://github.com/cohenyuval315/PyMicroservicesBase"
   },
   {
     title: "This Page",
     description: "Simple Web Postfolio blasted with everything",
     link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
-    demoLink: "https://cohenyuval315.github.io",
-  },
+    demoLink: "https://cohenyuval315.github.io"
+  }
 ];
 
 export const CONTACT_TITLE = "CONTACT ME";
@@ -232,16 +284,16 @@ export const CONTACT_DESCRIPTION = `
 export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     link: GITHUB_LINK,
-    name: "github",
+    name: "github"
   },
   {
     link: MAIL_TO_GMAIL_LINK,
-    name: "google",
+    name: "google"
   },
   {
     link: LINKEDIN_LINK,
-    name: "linkedin",
-  },
+    name: "linkedin"
+  }
 ];
 
 // <meta name="application-name" content="PWA App" />
