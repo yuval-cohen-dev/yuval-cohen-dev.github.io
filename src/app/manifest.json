@@ -1,0 +1,9 @@
+{
+  "id":"/",
+  "name": "yuval cohen portfolio",
+  "short_name": "yuval cohen cv",
+  "description": "web portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

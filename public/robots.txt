@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+
+# test-bot
+User-agent: test-bot
+Allow: /
+
+# black-listed-bot
+User-agent: black-listed-bot
+Disallow: /
+
+# Host
+Host: https://yuval-cohen.com
+
+# Sitemaps
+Sitemap: https://yuval-cohen.com/sitemap.xml
