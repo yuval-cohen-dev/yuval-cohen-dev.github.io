@@ -17,7 +17,6 @@ import {
 import HERO_JPG from "../public/images/hero.jpg";
 import LOGO_PNG from "../public/images/logo.png";
 
-
 export const FIRST_NAME = "Yuval";
 export const LAST_NAME = "Cohen";
 export const FULL_NAME = "Yuval Cohen";
@@ -27,12 +26,12 @@ export const PORTFOLIO = "Portfolio";
 export const GITHUB_LINK = `https://github.com/${USERNAME}`;
 export const REPO = `${GITHUB_LINK}/${USERNAME}.github.io`;
 export const LINKEDIN_LINK = "https://www.linkedin.com/in/yc315/";
-export const GMAIL_LINK = `${USERNAME}@gmail.com"`
+export const GMAIL_LINK = `${USERNAME}@gmail.com"`;
 export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_LINK}`;
-export const DOMAIN = "yuval-cohen.com"
+export const DOMAIN = "yuval-cohen.com";
 export const WEB_DOMAIN_URL = `https://${DOMAIN}`;
 
-export const SITE_TITLE = ""
+export const SITE_TITLE = "";
 export const SITE_DESCRIPTION = "";
 
 // Assets
@@ -67,7 +66,7 @@ const heroImageItem: ImageItem = {
   height: 3000,
   alt: "hero background",
   type: "image/jpg",
-}
+};
 
 const logoImageItem: ImageItem = {
   url: "/images/logo.png",
@@ -75,33 +74,27 @@ const logoImageItem: ImageItem = {
   height: 48,
   alt: "portfolio logo",
   type: "image/png",
-}
+};
 const faviconImageItem: ImageItem = {
   url: "/favicon.ico",
   width: 48,
   height: 48,
   alt: "",
   type: "image/icon",
-}
+};
 
-
-export const LANGUAGE = "en"
+export const LANGUAGE = "en";
 export const INTER = Inter({
   subsets: ["latin"],
   preload: true,
-  display:"swap",
-  variable: '--font-inter',
+  display: "swap",
+  variable: "--font-inter",
 });
 
 const ICONS = {
-  icon: [
-    { url: '/favicon.ico' },
-    { url: '/icon.png', type: 'image/png' },
-  ],
-  apple: [
-    { url: '/apple-icon.png' },
-  ],
-}
+  icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
+  apple: [{ url: "/apple-icon.png" }],
+};
 
 export const METADATA_TITLE: string = `${FULL_NAME}'s Portfolio`;
 export const METADATA_DESCRIPTION: string = `${FULL_NAME} Portfolio`;
@@ -110,19 +103,13 @@ export const METADATA: Metadata = {
   title: METADATA_TITLE,
   description: METADATA_DESCRIPTION,
   //   assets: "https://yuval-cohen.com/images",
-  openGraph:{
-    type:"website",
+  openGraph: {
+    type: "website",
   },
-  twitter:{
-    
-  }
+  twitter: {},
 };
 
-
-
-export const LINK_TAGS: LinkTagType[] = [
-
-]
+export const LINK_TAGS: LinkTagType[] = [];
 export const META_TAGS: MetaTagType[] = [
   //   {
   //     name: "description",
@@ -168,27 +155,23 @@ export const META_TAGS: MetaTagType[] = [
 
 export const GOOGLE_ANALYTICS_ID = "G-";
 export const JSON_LD_SCHEMA = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: FULL_NAME,
-    url: WEB_DOMAIN_URL,
-    image: WEB_DOMAIN_URL + logoImageItem.url,
-    description: "Portfolio",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email:GMAIL_LINK,
-    },
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: FULL_NAME,
+  url: WEB_DOMAIN_URL,
+  image: WEB_DOMAIN_URL + logoImageItem.url,
+  description: "Portfolio",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: GMAIL_LINK,
+  },
 };
-
-
 
 export const IMAGE_ITEMS: ImageItem[] = [
   heroImageItem,
   logoImageItem,
-  faviconImageItem
+  faviconImageItem,
 ];
-
-
 
 export const AUDIO_ITEMS: AudioItem[] = [];
 export const BOOK_ITEMS: BookItem[] = [];
@@ -203,16 +186,11 @@ export const OPEN_GRAPH_PROFILES: OpenGraphProfile = {
   username: USERNAME,
 };
 
-
-
 export const LOGO_ALT: string = "logo";
 export const LOGO_TEXT: string = `${FULL_NAME}`;
 
 export const LOGO_IMAGE = "/images/logo.png"; //LOGO_PNG ;
 export const HERO_IMAGE = "/images/hero.jpg"; // HERO_JPG;
-
-
-
 
 export const MENU_ITEMS: MenuItem[] = [
   { name: "Projects", link: "#projects" },
@@ -220,7 +198,6 @@ export const MENU_ITEMS: MenuItem[] = [
   { name: "Contact", link: "#contact" },
 ];
 export const FOOTER_TEXT = `© ${YEAR} ${FULL_NAME}. All rights reserved.`;
-
 
 export const HERO_DESCRIPTION = "Software Engineer";
 export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
@@ -233,15 +210,15 @@ export const ABOUT_TEXT = `
 
 export const PROJECTS: ProjectItem[] = [
   {
-      title: "PyMicroservicesBase",
-      description: "",
-      link: "https://github.com/cohenyuval315/PyMicroservicesBase",
+    title: "PyMicroservicesBase",
+    description: "",
+    link: "https://github.com/cohenyuval315/PyMicroservicesBase",
   },
   {
-      title: "This Page",
-      description: "Simple Web Postfolio blasted with everything",
-      link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
-      demoLink: "https://cohenyuval315.github.io",
+    title: "This Page",
+    description: "Simple Web Postfolio blasted with everything",
+    link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
+    demoLink: "https://cohenyuval315.github.io",
   },
 ];
 

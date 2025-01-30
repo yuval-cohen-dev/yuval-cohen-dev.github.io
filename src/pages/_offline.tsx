@@ -7,7 +7,9 @@ const Fallback = () => {
       <h1 className="text-3xl font-bold">{FULL_NAME} Portfolio</h1>
       <h2 className="text-xl text-gray-600 mt-2">You Are Offline</h2>
       <p className="text-gray-500 mt-4 max-w-md">
-        {"It looks like you've lost your internet connection. Please check your network and try again."}
+        {
+          "It looks like you've lost your internet connection. Please check your network and try again."
+        }
       </p>
       <div className="mt-6 p-4 bg-white shadow rounded-lg max-w-lg text-left">
         <h3 className="text-2xl font-semibold">{ABOUT_TITLE}</h3>
@@ -19,9 +21,7 @@ const Fallback = () => {
       >
         Retry
       </Link>
-      <footer className="mt-10 text-sm text-gray-400">
-        {FOOTER_TEXT}
-      </footer>
+      <footer className="mt-10 text-sm text-gray-400">{FOOTER_TEXT}</footer>
     </div>
   );
 };

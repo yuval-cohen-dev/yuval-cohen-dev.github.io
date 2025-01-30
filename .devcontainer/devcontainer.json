@@ -1,11 +1,14 @@
 {
   "name": "devcontainer workspace",
-  "dockerComposeFile": ["docker-compose.devcontainer.base.yml","docker-compose.devcontainer.yml"],
+  "dockerComposeFile": [
+    "docker-compose.devcontainer.base.yml",
+    "docker-compose.devcontainer.yml"
+  ],
   "service": "devcontainer",
   "remoteUser": "root",
-  "workspaceFolder": "/workspace",  
+  "workspaceFolder": "/workspace",
   "updateRemoteUserUID": true,
-  "customizations":{
+  "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
@@ -16,29 +19,27 @@
         "github.vscode-github-actions",
         "esbenp.prettier-vscode",
         "redhat.vscode-yaml",
-        "ms-azuretools.vscode-docker",
+        "ms-azuretools.vscode-docker"
       ],
       "settings": {
         "files.exclude": {
-            "**/.git": false
+          "**/.git": false
         }
-      } 
+      }
     }
   },
   "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
   "features": {
-    
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1":{},
-    "ghcr.io/devcontainers/features/docker-in-docker:2":{},
-    "ghcr.io/devcontainers/features/python:1":{},
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1":{},
-    "ghcr.io/gvatsal60/dev-container-features/pre-commit:1":{},
-    "ghcr.io/devcontainers/features/node:1":{},
-    "ghcr.io/devcontainers/features/git:1":{},
-    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0":{}
-    
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {},
+    "ghcr.io/gvatsal60/dev-container-features/pre-commit:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {}
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -51,5 +52,4 @@
 
   // Uncomment the next line to run commands after the container is created - for example installing curl.
   "postCreateCommand": "npm install"
-
 }

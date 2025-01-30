@@ -8,7 +8,6 @@ import type { NextConfig } from "next";
 import JavaScriptObfuscator from "webpack-obfuscator";
 import withPWA from "next-pwa"; // Import next-pwa plugin
 
-
 const isDebuggerEnabled = process.env.DEBUGGER === "true";
 const debuggerPort = process.env.DEBUGGER_PORT || "9229";
 const debuggerHost = process.env.DEBUGGER_HOST || "localhost";
@@ -28,7 +27,7 @@ const config = async (
     reactStrictMode: true,
     compress: true,
     staticPageGenerationTimeout: 60,
-    pageExtensions: ["ts", "tsx"],   
+    pageExtensions: ["ts", "tsx"],
     webpack(config, context) {
       // camel-case style names from css modules
       config.module.rules
@@ -99,7 +98,7 @@ const config = async (
       distDir: "dist",
       images: {
         unoptimized: true,
-      }, 
+      },
 
       productionBrowserSourceMaps: false,
       webpack(config, context) {
@@ -118,7 +117,6 @@ const config = async (
     return withPwaConfig(prodConfig);
   }
   return withPwaConfig(nextConfig);
-  
 };
 
 export default config;

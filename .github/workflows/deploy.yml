@@ -10,13 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
       - name: Run codespell on source code
         uses: codespell-project/actions-codespell@v2
         with:
-            skip: '*.fits'
-            ignore_words_file: .codespellignore
-            path: punchbowl     
+          skip: "*.fits"
+          ignore_words_file: .codespellignore
+          path: punchbowl
 
       # Checkout the code
       - name: Checkout Code

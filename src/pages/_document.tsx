@@ -1,4 +1,10 @@
-import { GOOGLE_ANALYTICS_ID, JSON_LD_SCHEMA, LANGUAGE, LINK_TAGS, META_TAGS } from "@/constants";
+import {
+  GOOGLE_ANALYTICS_ID,
+  JSON_LD_SCHEMA,
+  LANGUAGE,
+  LINK_TAGS,
+  META_TAGS,
+} from "@/constants";
 import { LinkTagType, MetaTagType } from "@/types/types";
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
@@ -23,7 +29,6 @@ function generateLinksTags({ linkTags }: { linkTags: LinkTagType[] }) {
   );
 }
 
-
 export default function Document() {
   const metaTags = generateMetaTags({ metaTags: META_TAGS });
   const linkTags = generateLinksTags({ linkTags: LINK_TAGS });
@@ -32,26 +37,62 @@ export default function Document() {
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />        
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/apple-touch-icon-57x57.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/apple-touch-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="76x76"
+          href="/apple-touch-icon-76x76.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/apple-touch-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/apple-touch-icon-120x120.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/apple-touch-icon-144x144.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/apple-touch-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon-180x180.png"
+        />
         <noscript>
-            <meta http-equiv="refresh" content="0;url=/no-javascript" />
+          <meta http-equiv="refresh" content="0;url=/no-javascript" />
         </noscript>
         <noscript>
-          <p>Your browser does not support JavaScript or it is disabled. Some features of this website may not work properly without JavaScript enabled.</p>
+          <p>
+            Your browser does not support JavaScript or it is disabled. Some
+            features of this website may not work properly without JavaScript
+            enabled.
+          </p>
         </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
-        />           
+        />
         {metaTags}
-        {linkTags}          
+        {linkTags}
         <Script
           async
           strategy="beforeInteractive"

@@ -16,8 +16,7 @@ repos:
     hooks:
       - id: codespell
         files: ^.*\.(js|jsx|ts|md|tsx|rst|yml)$
-        args: ["--ignore-words", ".codespellignore" ]      
-
+        args: ["--ignore-words", ".codespellignore"]
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.7.1
@@ -27,19 +26,19 @@ repos:
         files: \.(ts|tsx|js|json|md|yaml|html|css)$
         args: ["--config", ".prettierrc"]
         additional_dependencies:
-        -   prettier@2.1.2
-        -   prettier-plugin-tailwindcss
+          - prettier@2.1.2
+          - prettier-plugin-tailwindcss
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: ''  
+    rev: ""
     hooks:
-    -   id: eslint
+      - id: eslint
         name: "ESLint - Lint TypeScript files"
         files: \.(ts|tsx)$
-        args: ["--fix", "--max-warnings=0"]    
+        args: ["--fix", "--max-warnings=0"]
         additional_dependencies:
-        -   eslint
-        -   eslint-plugin-tailwindcss
-        -   "@next/eslint-plugin-next
-        -   eslint-config-next
-        -   eslint-config-prettier
+          - eslint
+          - eslint-plugin-tailwindcss
+          - "@next/eslint-plugin-next"
+          - eslint-config-next
+          - eslint-config-prettier

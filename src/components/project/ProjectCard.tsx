@@ -12,7 +12,11 @@ export default function ProjectCard({ project }: { project: ProjectItem }) {
           GitHub
         </Link>
         {project.demoLink && (
-          <Link href={project.demoLink} target="_blank" className="text-blue-500 hover:underline">
+          <Link
+            href={project.demoLink}
+            target="_blank"
+            className="text-blue-500 hover:underline"
+          >
             Live Demo
           </Link>
         )}

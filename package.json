@@ -116,5 +116,8 @@
   },
   "prettier": {
     "singleQuote": false
+  },
+  "lint-staged": {
+    "*": "your-cmd"
   }
 }
