@@ -55,7 +55,7 @@ exports[`renders homepage unchanged 1`] = `
             >
               <a
                 class="bg-black text-white px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
-                href="https://github.com/cohenyuval315"
+                href="https://github.com"
                 target="_blank"
               >
                 <svg
@@ -207,8 +207,8 @@ exports[`renders homepage unchanged 1`] = `
           class="text-lg max-w-3xl mx-auto text-center mb-8 text-gray-300"
         >
           
-    I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out via email. 
-    You can also connect with me on GitHub and LinkedIn, or use the form below to send a message. 
+    I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out via email.
+    You can also connect with me on GitHub and LinkedIn, or use the form below to send a message.
     Let’s talk!
 
         </p>

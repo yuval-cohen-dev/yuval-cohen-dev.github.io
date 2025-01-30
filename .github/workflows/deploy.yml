@@ -1,31 +1,37 @@
-name: Build and Deploy to Prod
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: GitHub Pages deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4.2.2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Use Nodejs
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 'latest'
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Installing my packages
+        run: npm ci --omit=dev  
 
-      - name: Build Static Site
-        run: npm run build
+      - name: Extract repository name
+        run: echo "BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Build my App
+        run: npm run build && touch ./out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: prod
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: prod # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy to.

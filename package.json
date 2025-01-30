@@ -6,6 +6,7 @@
   "scripts": {
     "nextjs": "node --allow-worker /node_modules/.bin/next",
     "start": "NEXT_MANUAL_SIG_HANDLE=true next start",
+    "serve": "npx run serve dist",
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",

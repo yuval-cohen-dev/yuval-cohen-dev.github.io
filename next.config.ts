@@ -7,6 +7,7 @@ import {
 import type { NextConfig } from "next";
 import JavaScriptObfuscator from "webpack-obfuscator";
 import withPWA from "next-pwa";
+import { WEB_URL } from "@/lib/constants";
 
 const BUILD_DIR = "dist";
 
@@ -26,7 +27,7 @@ const config = async (
   let phaseConfig: NextConfig = {};
   const nextConfig: NextConfig = {
     env: {
-      NEXT_TELEMETRY_DISABLED: 1
+      NEXT_TELEMETRY_DISABLED: "1"
     },
     reactStrictMode: true,
     compress: true,
@@ -85,8 +86,12 @@ const config = async (
       trailingSlash: true,
       distDir: BUILD_DIR,
       images: {
-        unoptimized: true
+        // loader: "akamai",
+        // path: "",
+        unoptimized:true
+        
       },
+      assetPrefix: `/`,
       productionBrowserSourceMaps: false,
       webpack(config, context) {
         nextConfig.webpack(config, context);

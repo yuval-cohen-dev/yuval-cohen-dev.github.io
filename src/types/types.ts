@@ -25,6 +25,21 @@ export type SocialLinkItem = {
   link: string;
 };
 
+
+export type IconTypeItem = {
+  src: string;
+  type?: string | undefined;
+  sizes?: string | undefined;
+  purpose?: 'any' | 'maskable' | 'monochrome' | undefined;
+};
+
+export type IconItem = {
+  url: string;
+  alt: string;
+  type: string; // e.g., "image/x-icon", "image/svg+xml"
+  size?: string; // Optional size for the icon (e.g., "16x16", "32x32")
+};
+
 export type ImageItem = {
   url: string;
   width: number;

@@ -14,81 +14,180 @@ import {
   VideoItem
 } from "@types";
 import { Manifest } from "next/dist/lib/metadata/types/manifest-types";
+import { RobotsFile, SitemapFile } from "@types";
+import { Videos } from "next/dist/lib/metadata/types/metadata-types";
 
-import HERO_JPG from "../public/static/images/hero.jpg";
-import LOGO_PNG from "../public/static/images/logo.png";
-import { RobotsFile, SitemapFile } from "@/types/types";
+export const YEAR = new Date().getUTCFullYear();
+export const LAST_MODIFIED = new Date();
 
 export const FIRST_NAME = "Yuval";
 export const LAST_NAME = "Cohen";
-export const FULL_NAME = "Yuval Cohen";
+export const FULL_NAME = `${FIRST_NAME} ${LAST_NAME}`;
 export const USERNAME = "cohenyuval315";
-export const PORTFOLIO = "Portfolio";
+export const GMAIL_ADDRESS = `${USERNAME}@gmail.com"`;
+export const GOOGLE_ANALYTICS_ID = "G-";
+export const FACEBOOK_APP_ID= "";
 
-export const GITHUB_LINK = `https://github.com/${USERNAME}`;
-export const REPO = `${GITHUB_LINK}/${USERNAME}.github.io`;
-export const LINKEDIN_LINK = "https://www.linkedin.com/in/yc315/";
-export const GMAIL_LINK = `${USERNAME}@gmail.com"`;
-export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_LINK}`;
+export const GITHUB_LINK = "https://github.com";
+export const MY_GITHUB_LINK = `https://github.com/${USERNAME}`;
+export const GITHUB_REPO = `${MY_GITHUB_LINK}.github.io`;
+export const GITHUB_PAGE_LINK = `https://${USERNAME}.github.io`;
+export const MY_LINKEDIN_LINK = "https://www.linkedin.com/in/yc315/";
+
+
+export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_ADDRESS}`;
+
 export const DOMAIN = "yuval-cohen.com";
+export const WWW_DOMAIN = `wwww.${DOMAIN}`;
+
+export const WEB_WWW_DOMAIN_URL = `https://${WWW_DOMAIN}`;
 export const WEB_DOMAIN_URL = `https://${DOMAIN}`;
 
-export const SITE_TITLE = "";
+export const IS_WWW_CANONICAL = true;
+export const WEB_URL = IS_WWW_CANONICAL ? WEB_WWW_DOMAIN_URL : WEB_DOMAIN_URL;
+
+export const TWT_CREATOR_ID = ""
+export const WEB_URL_LANGUAGES = {
+  languages:{
+    en: WEB_URL
+  }
+}
+export const APP_CATEGORY = "";
+export const APP_CLASSIFICATION = "";
+export const APP_CREATOR = "";
+
+export const REFERRER:'no-referrer' | 'origin' | 'no-referrer-when-downgrade' | 'origin-when-cross-origin' | 'same-origin' | 'strict-origin' | 'strict-origin-when-cross-origin' = "origin"
+export const SITE_FULL_NAME = "";
+export const SITE_SHORT_NAME = "";
 export const SITE_DESCRIPTION = "";
 
-export const MANIFEST: Manifest = {
-  id: "/",
-  name: "yuval cohen portfolio",
-  short_name: "yuval cohen cv",
-  description: "web portfolio",
-  start_url: "/",
-  display: "standalone",
-  orientation: "portrait",
-  icons: []
-};
-export const SITEMAP_FILE: SitemapFile = [];
-export const ROBOTS: RobotsFile = {
-  rules: {
-    userAgent: "*",
-    allow: "/"
-  },
-  sitemap: "https://www.yuval-cohen/sitemap.xml"
-};
+export const MANIFEST_FULL_NAME = "";
+export const MANIFEST_SHORT_NAME = "";
+export const MANIFEST_DESCRIPTION = "";
+export const MANIFEST_CATEGORIES= []
 
-export const ROBOTS_TXT_OPTIONS = {
-  policies: [
-    {
-      userAgent: "*",
-      allow: ["/"]
-    },
-    {
-      userAgent: "test-bot",
-      allow: ["/"]
-    },
-    {
-      userAgent: "black-listed-bot",
-      disallow: ["/"]
-    }
-  ],
-  additionalSitemaps: [
-    // 'https://example.com/my-custom-sitemap-1.xml',
-  ]
-};
+export const LANGUAGE = "en";
 
-export const SITE_URL = "https://yuval-cohen.com";
-export const CHANGE_FREQUENCY = "daily";
-export const PRIORITY = 0.7;
+export const PORTFOLIO = "Portfolio";
+
+export const METADATA_TITLE: string = `${FULL_NAME}'s Portfolio`;
+export const METADATA_DESCRIPTION: string = `${FULL_NAME} Portfolio`;
+export const JSONLD_TITLE: string = `${FULL_NAME}'s Portfolio`;
+export const JSONLD_DESCRIPTION: string = `${FULL_NAME} Portfolio`;
+export const OG_TITLE = "";
+export const OG_DESCRIPTION = "";
+
+export const CHANGE_FREQUENCY:"daily" | "never" | "always" | "hourly" | "weekly" | "monthly" | "yearly" | undefined = "daily";
+export const PRIORITY:number | undefined = 0.7;
 export const SITEMAP_SIZE = 5000;
-export const GENERATE_ROBOTS_TXT = true;
-export const EXCLUDE_PAGES = [];
-export const ALTERNATE_REFS = [
-  {
-    href: "https://he.yuval-cohen.com",
-    hreflang: "he"
-  }
+
+const COUNTRY_NAME = "Israel"
+const COUNTRY_LANG = "he"
+
+export const WEB_URL_ARCHIVES = `${WEB_URL}/archives`
+export const WEB_URL_ASSETS = `${WEB_URL}/assets`
+export const WEB_URL_STATIC = `${WEB_URL}/archives`
+export const MANIFEST_URL = `${WEB_URL}/manifest.json`
+export const KEYWORDS = []
+
+
+export const MANIFEST_DISPLAY = "browser"
+
+export const OG_SITENAME = "";
+export const OG_TTL = 60000;
+
+
+export const APP_NAME = "";
+export const GOOGLE_VERIFICATION = "1234567890"
+export const YANDEX_VERIFICATION = "1234567890"
+export const ME_VERIFICATION = "1234567890"
+export const YAHOO_VERIFICATION = "1234567890"
+
+export const TWT_DESCRIPTION = "";
+export const TWT_SITE = "";
+export const TWT_TITLE_ABS = "";
+export const TWT_TITLE_DEF = "";
+export const TWT_TITLE_TEM = "";
+export const TWT_SITE_ID = "";
+
+export const PUBLISHER = "Github"
+export const ITUNES_APP_ID = "";
+export const ITUNES_APP_ARG = "";
+export const WEBSITE_GENERATOR = "Next.js"
+
+
+
+export const ASSET_PREFIX = "" 
+// || process.env.BASE_PATH || "";
+
+const PREFIX_STATIC = ""
+const PREFIX_IMAGES = ""
+
+// ----------------- ASSETS ---------------------
+
+// SPECIFIC ICONS
+const heroImageItem: ImageItem = {
+  url: `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`,
+  width: 3000,
+  height: 3000,
+  alt: "hero background",
+  type: "image/jpg"
+};
+
+const logoImageItem: ImageItem = {
+  url: `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/logo.png`,
+  width: 48,
+  height: 48,
+  alt: "portfolio logo",
+  type: "image/png"
+};
+
+// SPECIFIC IMAGES
+const faviconImageItem: ImageItem = {
+  url: `${ASSET_PREFIX}/favicon.ico`,
+  width: 48,
+  height: 48,
+  alt: "",
+  type: "image/icon"
+};
+
+
+    // icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
+    // apple: [{ url: "/apple-icon.png" }]
+
+
+// REST 
+export const MANIFEST_ICONS =[
+
+  // {
+  //   // src: string;
+  //   // type?: string | undefined;
+  //   // sizes?: string | undefined;
+  //   // purpose?: 'any' | 'maskable' | 'monochrome' | undefined;
+  //   src:""
+  // }
+]
+
+
+export const ICONS = []
+
+
+
+// ALL ICONS ARE IMAGES
+export const IMAGES = [
+  ...ICONS,
+
 ];
 
-export const IMAGES: Record<string, ImageItem> = {
+export const AUDIOS: AudioItem[] = [];
+export const VIDEOS: VideoData[] = [];
+export const SITEMAP_VIDEOS:Videos[] = []
+
+export const BOOK_ITEMS: BookItem[] = [];
+export const VIDEOS_ITEMS: VideoItem[] = [];
+
+export const IMAGES_OBJ: Record<string, ImageItem> = {
+
   favicon: {
     url: "/favicon.ico",
     width: 48,
@@ -97,14 +196,14 @@ export const IMAGES: Record<string, ImageItem> = {
     type: "image/icon"
   },
   logo: {
-    url: "/static/images/icon.png",
+    url: `${ASSET_PREFIX}/icon.png`,
     width: 48,
     height: 48,
     alt: "portfolio logo",
     type: "image/png"
   },
   hero: {
-    url: "/static/images/hero.jpg",
+    url: `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`,
     width: 3000,
     height: 3000,
     alt: "hero background",
@@ -112,112 +211,7 @@ export const IMAGES: Record<string, ImageItem> = {
   }
 };
 
-const heroImageItem: ImageItem = {
-  url: "/static/images/hero.jpg",
-  width: 3000,
-  height: 3000,
-  alt: "hero background",
-  type: "image/jpg"
-};
 
-const logoImageItem: ImageItem = {
-  url: "/static/images/logo.png",
-  width: 48,
-  height: 48,
-  alt: "portfolio logo",
-  type: "image/png"
-};
-const faviconImageItem: ImageItem = {
-  url: "/favicon.ico",
-  width: 48,
-  height: 48,
-  alt: "",
-  type: "image/icon"
-};
-
-export const LANGUAGE = "en";
-export const INTER = Inter({
-  subsets: ["latin"],
-  preload: true,
-  display: "swap",
-  variable: "--font-inter"
-});
-
-const ICONS = {
-  icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
-  apple: [{ url: "/apple-icon.png" }]
-};
-
-export const METADATA_TITLE: string = `${FULL_NAME}'s Portfolio`;
-export const METADATA_DESCRIPTION: string = `${FULL_NAME} Portfolio`;
-
-export const METADATA: Metadata = {
-  title: METADATA_TITLE,
-  description: METADATA_DESCRIPTION,
-  //   assets: "https://yuval-cohen.com/images",
-  openGraph: {
-    type: "website"
-  },
-  twitter: {}
-};
-
-export const LINK_TAGS: LinkTagType[] = [];
-export const META_TAGS: MetaTagType[] = [
-  //   {
-  //     name: "description",
-  //     content: "Your description here",
-  //   },
-  //   {
-  //     name: "keywords",
-  //     content: "Keyword1, Keyword2, Keyword3",
-  //   },
-  //   {
-  //     name: "robots",
-  //     content: "index, follow",
-  //   },
-  //   {
-  //     property: "og:title",
-  //     content: "Your Site Title",
-  //   },
-  //   {
-  //     property: "og:description",
-  //     content: "Your site description here",
-  //   },
-  //   {
-  //     property: "og:image",
-  //     content: "URL_to_image.jpg",
-  //   },
-  //   {
-  //     name: "twitter:card",
-  //     content: "summary_large_image",
-  //   },
-  //   {
-  //     name: "twitter:title",
-  //     content: "Your Site Title",
-  //   },
-  //   {
-  //     name: "twitter:description",
-  //     content: "Your description here",
-  //   },
-  //   {
-  //     name: "twitter:image",
-  //     content: "URL_to_image.jpg",
-  //   },
-];
-
-export const GOOGLE_ANALYTICS_ID = "G-";
-export const JSON_LD_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: FULL_NAME,
-  url: WEB_DOMAIN_URL,
-  image: WEB_DOMAIN_URL + logoImageItem.url,
-  description: "Portfolio",
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: GMAIL_LINK
-  }
-};
 
 export const IMAGE_ITEMS: ImageItem[] = [
   heroImageItem,
@@ -225,12 +219,9 @@ export const IMAGE_ITEMS: ImageItem[] = [
   faviconImageItem
 ];
 
-export const AUDIO_ITEMS: AudioItem[] = [];
-export const BOOK_ITEMS: BookItem[] = [];
-export const VIDEO_ITEMS: VideoItem[] = [];
-export const VIDEO_DATA_ITEMS: VideoData[] = [];
 
-export const YEAR = new Date().getUTCFullYear();
+
+
 
 export const OPEN_GRAPH_PROFILES: OpenGraphProfile = {
   firstName: FIRST_NAME,
@@ -238,28 +229,295 @@ export const OPEN_GRAPH_PROFILES: OpenGraphProfile = {
   username: USERNAME
 };
 
+
+
+
+
+// --------------- FINISH ASSETS -------------------
+
+function normalizeImage(path:string){
+  if (path.includes(WEB_URL)){
+    return path
+  }else{
+    const image_with_url = `${WEB_URL}/${path}}`
+    return image_with_url
+  }
+}
+
+export const  ASSETS = [];
+
+export const JSONLD_IMAGE = normalizeImage(IMAGES_OBJ.hero.url);
+
+
+export const OG_IMAGES = []
+export const OG_VIDEOS = [];
+export const START_UP_IMAGES = [] // normalizeImage(IMAGES_OBJ.hero.url);
+export const MANIFEST_SCREENSHOTS= []
+
+
+export const MANIFEST: Manifest = {
+  id: "/",
+  name: MANIFEST_FULL_NAME,
+  short_name: MANIFEST_SHORT_NAME,
+  description: MANIFEST_DESCRIPTION,
+  start_url: "/",
+  display: MANIFEST_DISPLAY,
+  orientation: "portrait",
+  icons: MANIFEST_ICONS,
+  lang:LANGUAGE,
+  // theme_color,
+  // background_color,
+  categories:MANIFEST_CATEGORIES,
+  dir:"ltr",
+  display_override:["browser","fullscreen","standalone","minimal-ui","window-controls-overlay"],
+  file_handlers: [
+    {
+      action: "**/*",
+      accept: { 
+        "*/*": [] 
+      }      
+    }
+  ],
+  launch_handler:{
+    client_mode:"auto",
+  },
+  prefer_related_applications:false,
+  protocol_handlers:[],
+  related_applications:[
+    // {
+      // "platform": "ios",
+      // "url": "https://apps.apple.com/app/id123456789",
+      // "id": "com.example.app"
+    // }
+  ],
+  // scope:"/app",
+  screenshots: MANIFEST_SCREENSHOTS,
+  // share_target:{
+  //   action: "/share",
+  //   method: "POST",
+  //   enctype: "multipart/form-data",
+  //   params: {
+  //     title: "name",
+  //     text: "description"
+  //   }
+  // },
+  // shortcuts: [
+  //   {
+  //     name: "About",
+  //     short_name: "About",
+  //     url: "/about",
+  //     icons: ICONS
+  //   }
+  // ]
+};
+
+export const SITEMAP_FILE: SitemapFile = [
+  {
+    url:WEB_URL,
+    lastModified: LAST_MODIFIED,
+    changeFrequency:CHANGE_FREQUENCY,
+    priority:PRIORITY,
+    alternates:WEB_URL_LANGUAGES,
+    // videos:SITEMAP_VIDEOS,
+    // images:IMAGE_ITEMS.filter((image=> image.url)).map((image) => image.url), // error: list of strings
+    
+  }
+];
+
+export const ROBOTS: RobotsFile = {
+  rules: {
+    userAgent: "*",
+    allow: [ "/" ],
+    disallow:[ ],
+  },
+  // host: WEB_URL,
+  // sitemap: [...SITEMAP_FILE.map((sitemap) => sitemap.url)]
+};
+
+
+export const INTER = Inter({
+  subsets: ["latin"],
+  preload: true,
+  display: "swap",
+  variable: "--font-inter",
+});
+
+
+export const METADATA: Metadata = {
+  title: METADATA_TITLE,
+  description: METADATA_DESCRIPTION,
+  alternates:{
+    canonical:WEB_URL,
+    // languages:WEB_URL_LANGUAGES,
+    // media,
+    // types 
+  },
+  openGraph: {
+    type: "website",
+    alternateLocale:[],
+    audio: AUDIOS,
+    locale:COUNTRY_LANG,
+    countryName:COUNTRY_NAME,
+    description:OG_DESCRIPTION,
+    determiner:"auto",
+    emails:[GMAIL_ADDRESS],
+    faxNumbers:[],
+    // images:OG_IMAGES,
+    phoneNumbers:[],
+    // siteName:OG_SITENAME,
+    // title:OG_TITLE,
+    // ttl:OG_TTL,
+    url: WEB_URL,
+    // videos: OG_VIDEOS
+    
+  },
+  twitter: {
+    card:"summary",
+    creatorId:TWT_CREATOR_ID,
+    // players:[],
+
+    creator:FULL_NAME,
+    description:TWT_DESCRIPTION,
+    // images:IMAGES,
+    site:TWT_SITE,
+    title:{
+      absolute:TWT_TITLE_ABS,
+      default: TWT_TITLE_DEF,
+      template:TWT_TITLE_TEM
+    },
+    siteId:TWT_SITE_ID
+  },
+  appleWebApp:{
+    capable:true,
+    startupImage: START_UP_IMAGES,
+    statusBarStyle:"black"
+  },
+  applicationName:APP_NAME,
+  appLinks:{
+    android:[],
+    ios:[],
+    ipad:[],
+    iphone:[],
+    web:[],
+    windows:[],
+    windows_phone:[],
+    windows_universal:[]
+  },
+  archives:[WEB_URL_ARCHIVES],
+  assets:[WEB_URL_ASSETS],
+  authors:[{
+    name:FULL_NAME,
+    url:WEB_URL,
+  }],
+  bookmarks:[],
+  category:APP_CATEGORY,
+  classification:APP_CLASSIFICATION,
+  creator:APP_CREATOR,
+  facebook:{
+    appId:FACEBOOK_APP_ID
+  },
+  formatDetection:{
+    address:true,
+    date:true,
+    email:true,
+    telephone:false,
+    url:true
+  },
+  generator:WEBSITE_GENERATOR,
+  icons:ICONS,
+  itunes:{
+    appId:ITUNES_APP_ID,
+    appArgument: ITUNES_APP_ARG
+  },
+  keywords:KEYWORDS,
+  manifest:MANIFEST_URL,
+  other:{
+    
+  },
+  
+  publisher:PUBLISHER,
+  referrer:REFERRER,
+  robots:{
+    follow:true,
+    index:true,
+  },
+  verification:{ 
+    google: GOOGLE_VERIFICATION, 
+    yandex: YANDEX_VERIFICATION, 
+    "me": ME_VERIFICATION,
+    yahoo: YAHOO_VERIFICATION,
+    other: {
+      
+    },
+  },
+  // abstract,
+  // metadataBase:
+};
+
+
+export const LINK_TAGS: LinkTagType[] = [];
+export const META_TAGS: MetaTagType[] = [];
+
+export const JSON_LD_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: JSONLD_TITLE,
+  url: WEB_URL,
+  // image: JSONLD_IMAGE,
+  description: JSONLD_DESCRIPTION,
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: GMAIL_ADDRESS
+  },
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const SOCIAL_LINKS: SocialLinkItem[] = [
+  {
+    link: MY_GITHUB_LINK,
+    name: "github"
+  },
+  {
+    link: MAIL_TO_GMAIL_LINK,
+    name: "google"
+  },
+  {
+    link: MY_LINKEDIN_LINK,
+    name: "linkedin"
+  }
+];
+
+// APP FOOTER
+export const FOOTER_TEXT = `© ${YEAR} ${FULL_NAME}. All rights reserved.`;
+
+
+// APP HEADER
 export const LOGO_ALT: string = "logo";
 export const LOGO_TEXT: string = `${FULL_NAME}`;
-
-export const LOGO_IMAGE = "/static/images/logo.png"; //LOGO_PNG ;
-export const HERO_IMAGE = "/static/images/hero.jpg"; // HERO_JPG;
-
+export const LOGO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/logo.png`; //LOGO_PNG ;
 export const MENU_ITEMS: MenuItem[] = [
   { name: "Projects", link: "#projects" },
   { name: "About", link: "#about" },
   { name: "Contact", link: "#contact" }
 ];
-export const FOOTER_TEXT = `© ${YEAR} ${FULL_NAME}. All rights reserved.`;
 
-export const HERO_DESCRIPTION = "Software Engineer";
-export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
-export const HERO_IMAGE_ALT = "hero";
 
-export const ABOUT_TITLE = "About Me";
-export const ABOUT_TEXT = `
-    I’m a software engineer specializing in web development, python, and software design. I enjoy solving problems, learning new technologies, networking and connecting to others! .
-`;
-
+// PROJECTS 
 export const PROJECTS: ProjectItem[] = [
   {
     title: "PyMicroservicesBase",
@@ -274,72 +532,25 @@ export const PROJECTS: ProjectItem[] = [
   }
 ];
 
+
+// HERO
+export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`; // HERO_JPG;
+export const HERO_IMAGE_ALT = "hero";
+export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
+export const HERO_DESCRIPTION = "Software Engineer";
+
+
+
+// ABOUT
+export const ABOUT_TITLE = "About Me";
+export const ABOUT_TEXT = `
+    I’m a software engineer specializing in web development, python, and software design. I enjoy solving problems, learning new technologies, networking and connecting to others! .
+`;
+
+// CONTACT
 export const CONTACT_TITLE = "CONTACT ME";
 export const CONTACT_DESCRIPTION = `
     I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out via email.
     You can also connect with me on GitHub and LinkedIn, or use the form below to send a message.
     Let’s talk!
 `;
-
-export const SOCIAL_LINKS: SocialLinkItem[] = [
-  {
-    link: GITHUB_LINK,
-    name: "github"
-  },
-  {
-    link: MAIL_TO_GMAIL_LINK,
-    name: "google"
-  },
-  {
-    link: LINKEDIN_LINK,
-    name: "linkedin"
-  }
-];
-
-// <meta name="application-name" content="PWA App" />
-// <meta name="apple-mobile-web-app-capable" content="yes" />
-// <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-// <meta name="apple-mobile-web-app-title" content="PWA App" />
-// <meta name="description" content="Best PWA App in the world" />
-// <meta name="format-detection" content="telephone=no" />
-// <meta name="mobile-web-app-capable" content="yes" />
-// <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-// <meta name="msapplication-TileColor" content="#2B5797" />
-// <meta name="msapplication-tap-highlight" content="no" />
-// <meta name="theme-color" content="#000000" />
-
-// <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
-// <link rel="apple-touch-icon" sizes="152x152" href="/icons/touch-icon-ipad.png" />
-// <link rel="apple-touch-icon" sizes="180x180" href="/icons/touch-icon-iphone-retina.png" />
-// <link rel="apple-touch-icon" sizes="167x167" href="/icons/touch-icon-ipad-retina.png" />
-
-// <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-// <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-// <link rel="manifest" href="/manifest.json" />
-// <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
-// <link rel="shortcut icon" href="/favicon.ico" />
-// <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
-
-// <meta name="twitter:card" content="summary" />
-// <meta name="twitter:url" content="https://yourdomain.com" />
-// <meta name="twitter:title" content="PWA App" />
-// <meta name="twitter:description" content="Best PWA App in the world" />
-// <meta name="twitter:image" content="https://yourdomain.com/icons/android-chrome-192x192.png" />
-// <meta name="twitter:creator" content="@DavidWShadow" />
-// <meta property="og:type" content="website" />
-// <meta property="og:title" content="PWA App" />
-// <meta property="og:description" content="Best PWA App in the world" />
-// <meta property="og:site_name" content="PWA App" />
-// <meta property="og:url" content="https://yourdomain.com" />
-// <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" />
-
-// <!-- apple splash screen images -->
-// <!--
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_2048.png' sizes='2048x2732' />
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_1668.png' sizes='1668x2224' />
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_1536.png' sizes='1536x2048' />
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_1125.png' sizes='1125x2436' />
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_1242.png' sizes='1242x2208' />
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_750.png' sizes='750x1334' />
-// <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
-// -->
