@@ -12,7 +12,8 @@ import {
   GITHUB_LINK,
   CONTACT_DESCRIPTION,
   CONTACT_TITLE,
-  HERO_IMAGE_ALT
+  HERO_IMAGE_ALT,
+  MY_GITHUB_LINK
 } from "@constants";
 import ScrollTopButton from "@/components/ScrollTopButton";
 import Hero from "@/components/Hero";
@@ -28,7 +29,7 @@ import Link from "next/link";
 function HeroExtra() {
   return (
     <Link
-      href={GITHUB_LINK}
+      href={MY_GITHUB_LINK}
       target="_blank"
       className="bg-black text-white px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
     >
