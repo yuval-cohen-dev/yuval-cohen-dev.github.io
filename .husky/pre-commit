@@ -1,4 +1,3 @@
-# # npx run install
 npx lint-staged
 npm run spell
 npm run format
