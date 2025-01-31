@@ -1,8 +1,8 @@
-"use client"
-import Script from 'next/script';
+"use client";
+import Script from "next/script";
 
-const GoogleAnalytics = ({id}: {id:string | null| undefined}) => {
-  if (!id){
+const GoogleAnalytics = ({ id }: { id: string | null | undefined }) => {
+  if (!id) {
     return null;
   }
   return (
@@ -19,7 +19,7 @@ const GoogleAnalytics = ({id}: {id:string | null| undefined}) => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${id}');
-          `,
+          `
         }}
       />
     </>

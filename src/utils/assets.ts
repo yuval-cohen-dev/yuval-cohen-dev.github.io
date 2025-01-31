@@ -8,10 +8,10 @@ const AUDIO_EXTENSIONS = ["mp3", "wav", "ogg"];
 const VIDEO_EXTENSIONS = ["mp4", "webm", "ogg"];
 const ICON_EXTENSIONS = ["ico", "svg", "webp", "png"]; // Added icon extensions
 
-
 export const getAssetsFromPublicFolder = (folderPath: string) => {
   // Helper function to get the file extension
-  const getFileExtension = (fileName: string) => fileName.split('.').pop()?.toLowerCase();
+  const getFileExtension = (fileName: string) =>
+    fileName.split(".").pop()?.toLowerCase();
 
   // Helper function to get image metadata
   const getImageMetadata = (filePath: string): ImageItem => ({
@@ -19,7 +19,7 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
     width: 3000, // Placeholder, ideally you could use a library to get actual image dimensions
     height: 3000, // Placeholder, same as above
     alt: filePath, // Can be changed to match your assets' naming convention
-    type: `image/${getFileExtension(filePath)}`,
+    type: `image/${getFileExtension(filePath)}`
   });
 
   // Helper function to get audio metadata
@@ -28,7 +28,7 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
     alt: filePath, // Similar to the image alt
     width: 0, // No width for audio
     height: 0, // No height for audio
-    type: `audio/${getFileExtension(filePath)}`,
+    type: `audio/${getFileExtension(filePath)}`
   });
 
   // Helper function to get video metadata
@@ -37,7 +37,7 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
     alt: filePath, // Similar to the image alt
     width: 1280, // Placeholder for video width
     height: 720, // Placeholder for video height
-    type: `video/${getFileExtension(filePath)}`,
+    type: `video/${getFileExtension(filePath)}`
   });
 
   // Helper function to get icon metadata
@@ -45,7 +45,7 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
     url: filePath,
     alt: filePath, // Can be changed based on naming convention
     type: `image/${getFileExtension(filePath)}`, // E.g., image/x-icon, image/svg+xml
-    size: "16x16", // Placeholder, can be dynamically set if needed
+    size: "16x16" // Placeholder, can be dynamically set if needed
   });
 
   const assets: {
@@ -57,13 +57,13 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
     images: [],
     audio: [],
     videos: [],
-    icons: [],
+    icons: []
   };
 
   const scanFolder = (dir: string) => {
     const files = fs.readdirSync(dir);
 
-    files.forEach(file => {
+    files.forEach((file) => {
       const filePath = path.join(dir, file);
 
       if (fs.statSync(filePath).isDirectory()) {
@@ -89,9 +89,9 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
 };
 
 // Example Usage
-const assets = getAssetsFromPublicFolder(path.join(__dirname, 'public'));
+const assets = getAssetsFromPublicFolder(path.join(__dirname, "public"));
 
-console.log('Images:', assets.images);
-console.log('Audio:', assets.audio);
-console.log('Videos:', assets.videos);
-console.log('Icons:', assets.icons); // Logs the icons found
+console.log("Images:", assets.images);
+console.log("Audio:", assets.audio);
+console.log("Videos:", assets.videos);
+console.log("Icons:", assets.icons); // Logs the icons found

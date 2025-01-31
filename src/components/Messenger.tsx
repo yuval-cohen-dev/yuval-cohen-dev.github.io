@@ -1,7 +1,7 @@
 "use client";
 // @ts-ignore
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Messenger() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,8 +23,6 @@ export default function Messenger() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  
 
   const tawkMessengerRef = useRef<any>(null);
   const props = {
@@ -76,11 +74,11 @@ export default function Messenger() {
   };
   return (
     <div>
-      {isVisible && (    
+      {isVisible && (
         <div className="hidden">
           <script
-              dangerouslySetInnerHTML={{
-                __html: `
+            dangerouslySetInnerHTML={{
+              __html: `
                           var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
                           (function(){
                               var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -91,17 +89,16 @@ export default function Messenger() {
                               s0.parentNode.insertBefore(s1,s0);
                           })();
                       `
-              }}
-            />
-            <TawkMessengerReact
-              propertyId="property_id"
-              widgetId="default"
-              {...props}
-              ref={tawkMessengerRef}
-            />
-            
-          </div>
+            }}
+          />
+          <TawkMessengerReact
+            propertyId="property_id"
+            widgetId="default"
+            {...props}
+            ref={tawkMessengerRef}
+          />
+        </div>
       )}
-    </div>    
+    </div>
   );
 }

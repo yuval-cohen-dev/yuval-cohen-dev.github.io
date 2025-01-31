@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { MenuItem } from "@/types/types";
 import Motion from "@Motion";
@@ -44,12 +44,13 @@ export default function NavigationBar({
       </div>
 
       {/* Hamburger Icon (Mobile only) */}
-      <div className="md:hidden flex items-center" style={{
-        paddingRight:10,
-      }}>
-        <Hamburger
-          onClick={toggleMenu}
-        />
+      <div
+        className="md:hidden flex items-center"
+        style={{
+          paddingRight: 10
+        }}
+      >
+        <Hamburger onClick={toggleMenu} />
       </div>
 
       {/* Mobile Navigation Menu (visible when the menu is open) */}

@@ -57,7 +57,6 @@ body {
   margin-left: 0.25em;
 }
 
-
 #nprogress {
   pointer-events: none;
 }
@@ -78,7 +77,9 @@ body {
   right: 0;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px var(--nprogress-color), 0 0 5px var(--nprogress-color);
+  box-shadow:
+    0 0 10px var(--nprogress-color),
+    0 0 5px var(--nprogress-color);
   opacity: 1;
   transform: rotate(3deg) translate(0px, -4px);
 }

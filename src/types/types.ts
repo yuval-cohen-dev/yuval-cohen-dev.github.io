@@ -25,12 +25,11 @@ export type SocialLinkItem = {
   link: string;
 };
 
-
 export type IconTypeItem = {
   src: string;
   type?: string | undefined;
   sizes?: string | undefined;
-  purpose?: 'any' | 'maskable' | 'monochrome' | undefined;
+  purpose?: "any" | "maskable" | "monochrome" | undefined;
 };
 
 export type IconItem = {

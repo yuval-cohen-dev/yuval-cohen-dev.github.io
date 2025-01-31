@@ -22,12 +22,10 @@ const LogoWithName: React.FC<LogoWithNameProps> = ({
         alt={alt}
         width={width}
         height={height}
-        style={{
-          
-        }}
+        style={{}}
       />
       {/* text-2xl font-extrabold text-white */}
-      <span className="ml-2 text-lg md:text-xl font-bold" >{name}</span>
+      <span className="ml-2 text-lg md:text-xl font-bold">{name}</span>
     </div>
   );
 };

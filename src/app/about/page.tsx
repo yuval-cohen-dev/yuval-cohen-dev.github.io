@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import AboutSection from "@/components/AboutSection";
 import { ABOUT_TEXT, ABOUT_TITLE } from "@constants";
 

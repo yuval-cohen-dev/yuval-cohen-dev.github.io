@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="bg-gray-900 text-white min-h-screen font-sans">
           <AppHeader>
-          <div className="flex items-center justify-between ">          
+            <div className="flex items-center justify-between ">
               <LogoWithName
                 alt={LOGO_ALT}
                 name={LOGO_TEXT}
@@ -39,14 +39,11 @@ export default function RootLayout({
               />
 
               <NavigationBar menuItems={MENU_ITEMS} />
-              <ProgressBar/>
+              <ProgressBar />
             </div>
           </AppHeader>
           <main>
-            <Suspense>
-              
-              {children}
-            </Suspense>
+            <Suspense>{children}</Suspense>
           </main>
           <AppFooter text={FOOTER_TEXT} />
         </div>

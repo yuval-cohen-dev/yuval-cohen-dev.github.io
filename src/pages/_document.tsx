@@ -14,10 +14,16 @@ import LinksTags from "@/components/LinkTags";
 export default function Document() {
   return (
     <Html lang={LANGUAGE}>
-      <Head>     
-        <link rel="icon" href="https://www.yuval-cohen.com/favicon.ico" />
-        <link rel="icon" href="https://www.yuval-cohen.com/static/images/hero.jpg" />
-  
+      <Head>
+        <link
+          rel="icon"
+          href="https://www.yuval-cohen.com/favicon.ico"
+        />
+        <link
+          rel="icon"
+          href="https://www.yuval-cohen.com/static/images/hero.jpg"
+        />
+
         <noscript>
           <meta
             http-equiv="refresh"
@@ -31,10 +37,10 @@ export default function Document() {
             enabled.
           </p>
         </noscript>
-          <LinksTags linkTags={LINK_TAGS}/>
-          <MetaTags metaTags={META_TAGS}/>
-          <JsonLd schema={JSON_LD_SCHEMA}/>
-          <GoogleAnalytics id={GOOGLE_ANALYTICS_ID}/>
+        <LinksTags linkTags={LINK_TAGS} />
+        <MetaTags metaTags={META_TAGS} />
+        <JsonLd schema={JSON_LD_SCHEMA} />
+        <GoogleAnalytics id={GOOGLE_ANALYTICS_ID} />
       </Head>
       <body>
         <Main />
@@ -43,4 +49,3 @@ export default function Document() {
     </Html>
   );
 }
-

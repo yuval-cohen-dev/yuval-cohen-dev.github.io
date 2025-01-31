@@ -11,23 +11,23 @@ import { WEB_URL } from "@/lib/constants";
 
 const BUILD_DIR = "dist";
 
-const withPwaConfig = withPWA({ // nextjs recommend Serwist
+const withPwaConfig = withPWA({
+  // nextjs recommend Serwist
   dest: `public`,
   sw: "/sw.js",
-  register:true,
+  register: true,
   disable: process.env.NODE_ENV === "development",
   register: true,
-  fallbacks:{
-    document: "/_offline",
-    // image, 
+  fallbacks: {
+    document: "/_offline"
+    // image,
     // audio,
     // video,
     // font
   },
-  reloadOnOnline:true,
-  buildExcludes:[],
-  publicExcludes:['!noprecache/**/*']
-
+  reloadOnOnline: true,
+  buildExcludes: [],
+  publicExcludes: ["!noprecache/**/*"]
 });
 
 const config = async (
@@ -94,15 +94,14 @@ const config = async (
 
   if (phase === PHASE_PRODUCTION_BUILD) {
     phaseConfig = {
-      
       output: "export",
       skipTrailingSlashRedirect: true,
       trailingSlash: true,
       distDir: BUILD_DIR,
       images: {
-        unoptimized:true,
+        unoptimized: true,
         loader: "akamai",
-        path: "",
+        path: ""
       },
       assetPrefix: `/`,
       productionBrowserSourceMaps: false,

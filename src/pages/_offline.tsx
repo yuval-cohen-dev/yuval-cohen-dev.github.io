@@ -1,7 +1,6 @@
 import { FULL_NAME, ABOUT_TITLE, ABOUT_TEXT, FOOTER_TEXT } from "@constants";
 import Link from "next/link";
 
-
 const Fallback = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-center p-6">

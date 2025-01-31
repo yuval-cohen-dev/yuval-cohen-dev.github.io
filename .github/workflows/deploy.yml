@@ -18,7 +18,7 @@ jobs:
       - name: Use Nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: 'latest'
+          node-version: "latest"
 
       - name: Installing my packages
         run: npm install

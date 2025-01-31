@@ -27,7 +27,7 @@ export default function Hero({
           style={{
             userSelect: "none",
             pointerEvents: "none",
-            zIndex: 0,
+            zIndex: 0
           }}
         />
       </div>

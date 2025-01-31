@@ -3,13 +3,12 @@ import Link from "next/link";
 
 export default function ContactForm({
   title,
-  description,
-  
+  description
 }: {
   title: string;
   description: string;
 }) {
-  const action =  `https://formspree.io/f/${FORM_ID}`;
+  const action = `https://formspree.io/f/${FORM_ID}`;
   return (
     <section
       id="contact"
