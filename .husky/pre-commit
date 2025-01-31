@@ -3,5 +3,5 @@
 # # npx lint-staged
 npm run format
 npm run lint
-# # npm test -- --u
+npm test -- --u
 
