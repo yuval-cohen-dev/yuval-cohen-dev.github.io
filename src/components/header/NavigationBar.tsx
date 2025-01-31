@@ -49,7 +49,6 @@ export default function NavigationBar({
       }}>
         <Hamburger
           onClick={toggleMenu}
-          className="w-8 h-8 text-white hover:text-gray-400" // Larger size and hover effect
         />
       </div>
 

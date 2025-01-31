@@ -51,7 +51,7 @@ const NProgressBar = ({
       Router.events.off('routeChangeError', handleStop);
     };
   }, [Router, showOnShallow, startPosition, stopDelayMs, options]);
-
+  return null;
 };
 
 

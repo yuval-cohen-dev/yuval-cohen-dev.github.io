@@ -1,6 +1,6 @@
-export default function Hamburger({onClick}){
+export default function Hamburger({onClick}: {onClick:any}){
     return (
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center w-8 h-8 text-white hover:text-gray-400">
           <button
             onClick={onClick}
             className="text-white focus:outline-none"
