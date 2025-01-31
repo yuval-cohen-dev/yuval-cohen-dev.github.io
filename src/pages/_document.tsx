@@ -73,10 +73,7 @@ export default function Document() {
                 gtag('js', new Date());
                 gtag('config', 'G-6XN8B6ZLMM');`
             }}
-          />          
-          <Script>
-
-          </Script>        
+          />              
         {/* <Script
           async
           strategy="beforeInteractive"
