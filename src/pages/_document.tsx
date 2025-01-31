@@ -14,7 +14,10 @@ import LinksTags from "@/components/LinkTags";
 export default function Document() {
   return (
     <Html lang={LANGUAGE}>
-      <Head>       
+      <Head>     
+        <link rel="icon" href="https://www.yuval-cohen.com/favicon.ico" />
+        <link rel="icon" href="https://www.yuval-cohen.com/static/images/hero.jpg" />
+  
         <noscript>
           <meta
             http-equiv="refresh"

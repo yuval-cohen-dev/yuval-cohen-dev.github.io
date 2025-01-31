@@ -8,9 +8,9 @@ export type MetaTagType = {
 };
 
 export type LinkTagType = {
-  name?: string;
+  rel?: string;
   property?: string;
-  content: string;
+  href: string;
 };
 
 export type ProjectItem = {

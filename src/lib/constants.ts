@@ -117,14 +117,16 @@ export const WEBSITE_GENERATOR = "Next.js"
 
 
 
-export const ASSET_PREFIX = process.env.BASE_PATH || ""
+// export const ASSET_PREFIX = process.env.BASE_PATH || ""
 // export const ASSET_PREFIX = WEB_URL
-// export const ASSET_PREFIX = ""
+export const ASSET_PREFIX = ""
 
 //  || "";
 
-const PREFIX_STATIC = "/static"
-const PREFIX_IMAGES = "/images"
+// export const PREFIX_STATIC = "/static"
+// export const PREFIX_IMAGES = "/images"
+export const PREFIX_STATIC = ""
+export const PREFIX_IMAGES = ""
 
 // ----------------- ASSETS ---------------------
 
@@ -458,7 +460,8 @@ export const METADATA: Metadata = {
 };
 
 
-export const LINK_TAGS: LinkTagType[] = [];
+export const LINK_TAGS: LinkTagType[] = [
+];
 export const META_TAGS: MetaTagType[] = [];
 
 export const JSON_LD_SCHEMA = {
@@ -537,8 +540,8 @@ export const PROJECTS: ProjectItem[] = [
 
 
 // HERO
-// export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`;
-export const HERO_IMAGE = `https://www.yuval-cohen.com/static/images/hero.jpg`;
+export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`;
+
 export const HERO_IMAGE_ALT = "hero";
 export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
 export const HERO_DESCRIPTION = "Software Engineer";

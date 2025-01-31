@@ -27,6 +27,7 @@
     "date-fns": "4.1.0",
     "lodash": "4.17.21",
     "image-size": "1.2.0",
+    "sharp":"0.33.5",
     "next": "15.1.6",
     "react": "^18",
     "react-dom": "^18",
