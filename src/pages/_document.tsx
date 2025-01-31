@@ -41,6 +41,15 @@ export default function Document() {
   return (
     <Html lang={LANGUAGE}>
       <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM">
+        </script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-6XN8B6ZLMM');
+        </script>        
         <noscript>
           <meta
             http-equiv="refresh"
