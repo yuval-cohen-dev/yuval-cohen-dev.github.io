@@ -117,11 +117,11 @@ export const WEBSITE_GENERATOR = "Next.js"
 
 
 
-export const ASSET_PREFIX = "" 
-// || process.env.BASE_PATH || "";
+export const ASSET_PREFIX = process.env.BASE_PATH || ""
+//  || "";
 
-const PREFIX_STATIC = ""
-const PREFIX_IMAGES = ""
+const PREFIX_STATIC = "/static"
+const PREFIX_IMAGES = "/images"
 
 // ----------------- ASSETS ---------------------
 
