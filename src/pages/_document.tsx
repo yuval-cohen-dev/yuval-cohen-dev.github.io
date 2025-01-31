@@ -60,11 +60,29 @@ export default function Document() {
         />
         {metaTags}
         {linkTags}
-        <Script
+
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM"></Script>
+          <Script
+            // id="google-analytics"
+            // async
+            // strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-6XN8B6ZLMM');`
+            }}
+          />          
+          <Script>
+
+          </Script>        
+        {/* <Script
           async
           strategy="beforeInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-        />
+          
+        /> */}
         <Script
           id="google-analytics"
           async
@@ -79,7 +97,7 @@ export default function Document() {
                       });
                   `
           }}
-        />
+          />
       </Head>
       <body>
         <Main />
