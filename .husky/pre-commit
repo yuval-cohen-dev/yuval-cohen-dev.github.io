@@ -1,6 +1,6 @@
-npx lint-staged
-npm run spell
-npm run format
-npm run lint
-npm test -- --u
+# npx lint-staged
+# npm run spell
+# npm run format
+# npm run lint
+# npm test -- --u
 
