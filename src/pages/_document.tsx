@@ -63,7 +63,7 @@ export default function Document() {
 
           <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM"></Script>
           <Script
-            // id="google-analytics"
+            id="google-analytics"
             // async
             // strategy="beforeInteractive"
             dangerouslySetInnerHTML={{
@@ -83,7 +83,7 @@ export default function Document() {
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
           
         /> */}
-        <Script
+        {/* <Script
           id="google-analytics"
           async
           strategy="beforeInteractive"
@@ -97,7 +97,7 @@ export default function Document() {
                       });
                   `
           }}
-          />
+          /> */}
       </Head>
       <body>
         <Main />
