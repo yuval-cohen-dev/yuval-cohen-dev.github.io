@@ -25,7 +25,7 @@ export const LAST_NAME = "Cohen";
 export const FULL_NAME = `${FIRST_NAME} ${LAST_NAME}`;
 export const USERNAME = "cohenyuval315";
 export const GMAIL_ADDRESS = `${USERNAME}@gmail.com"`;
-export const GOOGLE_ANALYTICS_ID = "G-";
+export const GOOGLE_ANALYTICS_ID = "G-6XN8B6ZLMM";
 export const FACEBOOK_APP_ID= "";
 
 export const GITHUB_LINK = "https://github.com";
