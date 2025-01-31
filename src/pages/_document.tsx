@@ -61,7 +61,7 @@ export default function Document() {
         {metaTags}
         {linkTags}
 
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM"></Script>
+          <Script id="google-analytics-tag-manager" async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM"></Script>
           <Script
             id="google-analytics"
             // async

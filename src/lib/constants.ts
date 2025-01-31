@@ -534,7 +534,8 @@ export const PROJECTS: ProjectItem[] = [
 
 
 // HERO
-export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`; // HERO_JPG;
+// export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`; // HERO_JPG;
+export const HERO_IMAGE = `${ASSET_PREFIX}/static/images/hero.jpg`; // HERO_JPG;
 export const HERO_IMAGE_ALT = "hero";
 export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
 export const HERO_DESCRIPTION = "Software Engineer";
