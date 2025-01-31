@@ -38,7 +38,7 @@ export const  FORM_ID = "xgvoyale"
 export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_ADDRESS}`;
 
 export const DOMAIN = "yuval-cohen.com";
-export const WWW_DOMAIN = `wwww.${DOMAIN}`;
+export const WWW_DOMAIN = `www.${DOMAIN}`;
 
 export const WEB_WWW_DOMAIN_URL = `https://${WWW_DOMAIN}`;
 export const WEB_DOMAIN_URL = `https://${DOMAIN}`;
@@ -118,15 +118,15 @@ export const WEBSITE_GENERATOR = "Next.js"
 
 
 // export const ASSET_PREFIX = process.env.BASE_PATH || ""
-// export const ASSET_PREFIX = WEB_URL
-export const ASSET_PREFIX = ""
+export const ASSET_PREFIX = WEB_URL
+// export const ASSET_PREFIX = ""
 
 //  || "";
 
-// export const PREFIX_STATIC = "/static"
-// export const PREFIX_IMAGES = "/images"
-export const PREFIX_STATIC = ""
-export const PREFIX_IMAGES = ""
+export const PREFIX_STATIC = "/static"
+export const PREFIX_IMAGES = "/images"
+// export const PREFIX_STATIC = ""
+// export const PREFIX_IMAGES = ""
 
 // ----------------- ASSETS ---------------------
 

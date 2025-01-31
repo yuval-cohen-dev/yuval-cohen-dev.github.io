@@ -71,7 +71,6 @@ Aside from the content, which is custom-built specifically for me, this website 
 - `manifest.json`
 - `robots.txt`, 
 - `sitemap.xml`s  
-- `robots.txt`, 
 - Favicon, Apple Touch icon, ...
 - OpenGraph & Twitter, ...
 - JSON-LD
