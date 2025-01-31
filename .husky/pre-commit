@@ -1,6 +1,6 @@
 # # npx run install
-# # npm run spell
 # # npx lint-staged
+npm run spell
 npm run format
 npm run lint
 npm test -- --u
