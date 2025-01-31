@@ -40,16 +40,7 @@ export default function Document() {
   const linkTags = generateLinksTags({ linkTags: LINK_TAGS });
   return (
     <Html lang={LANGUAGE}>
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM">
-        </script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-6XN8B6ZLMM');
-        </script>        
+      <Head>       
         <noscript>
           <meta
             http-equiv="refresh"
@@ -63,47 +54,28 @@ export default function Document() {
             enabled.
           </p>
         </noscript>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
-        />
-        {metaTags}
-        {linkTags}
-
-          <Script id="google-analytics-tag-manager" async src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM"></Script>
+          <script
+            id="json-ld-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
+          />
+          {metaTags}
+          {linkTags}
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-6XN8B6ZLMM"
+          ></Script>
           <Script
             id="google-analytics"
-            // async
-            // strategy="beforeInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-6XN8B6ZLMM');`
+                gtag('config', 'G-6XN8B6ZLMM');
+              `,
             }}
-          />              
-        {/* <Script
-          async
-          strategy="beforeInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-          
-        /> */}
-        {/* <Script
-          id="google-analytics"
-          async
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-                      gtag('config', '${GOOGLE_ANALYTICS_ID}', {
-                          page_path: window.location.pathname,
-                      });
-                  `
-          }}
-          /> */}
+          />
       </Head>
       <body>
         <Main />
