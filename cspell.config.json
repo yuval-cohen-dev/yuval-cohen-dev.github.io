@@ -1,0 +1,27 @@
+{ 
+    "ignorePaths": [
+        "node_modules",
+        "dist",
+        "coverage",
+        "certificates",
+        "public",
+        "__tests__",
+        "src/lib/constants.ts"
+    ],
+    "ignoreWords": [
+        "xgvoyale",
+
+        "Tawk",
+        "devcontainers",
+        "Formspree",
+        "yuval",
+        "cohen",
+        "postbuild",
+        "Serwist",
+        "cohenyuval",
+        "nprogress",
+        "noprecache",
+        "Lightningcss",
+        "Prechat",
+    ]
+}

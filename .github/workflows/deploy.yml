@@ -26,6 +26,9 @@ jobs:
       - name: Extract repository name
         run: echo "NEXT_PUBLIC_BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
 
+      - name: Print repository name
+        run: echo "NEXT_PUBLIC_BASE_PATH"
+
       - name: Build my App
         run: npm run build && touch ./dist/.nojekyll
 

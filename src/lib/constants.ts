@@ -93,7 +93,7 @@ export const KEYWORDS = []
 
 export const MANIFEST_DISPLAY = "browser"
 
-export const OG_SITENAME = "";
+export const OG_SITE_NAME = "";
 export const OG_TTL = 60000;
 
 
@@ -369,7 +369,7 @@ export const METADATA: Metadata = {
     faxNumbers:[],
     // images:OG_IMAGES,
     phoneNumbers:[],
-    // siteName:OG_SITENAME,
+    // siteName:OG_SITE_NAME,
     // title:OG_TITLE,
     // ttl:OG_TTL,
     url: WEB_URL,

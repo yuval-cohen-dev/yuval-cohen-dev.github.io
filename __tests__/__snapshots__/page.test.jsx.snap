@@ -20,10 +20,11 @@ exports[`renders homepage unchanged 1`] = `
             alt="hero"
             data-nimg="fill"
             decoding="async"
+            loading="lazy"
             sizes="100vw"
             src="/_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=3840&q=75"
             srcset="/_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=640&q=75 640w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=750&q=75 750w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=828&q=75 828w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fstatic%2Fimages%2Fhero.jpg&w=3840&q=75 3840w"
-            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; object-position: center; color: transparent; user-select: none; pointer-events: none; z-index: 0;"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent; user-select: none; pointer-events: none; z-index: 0;"
           />
         </div>
         <div
@@ -55,7 +56,7 @@ exports[`renders homepage unchanged 1`] = `
             >
               <a
                 class="bg-black text-white px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
-                href="https://github.com"
+                href="https://github.com/cohenyuval315"
                 target="_blank"
               >
                 <svg
@@ -111,38 +112,12 @@ exports[`renders homepage unchanged 1`] = `
                 <h3
                   class="text-xl font-semibold text-white"
                 >
-                  PyMicroservicesBase
-                </h3>
-                <p
-                  class="text-gray-400 mt-2"
-                />
-                <div
-                  class="mt-4 flex justify-between items-center"
-                >
-                  <a
-                    class="text-blue-500 hover:underline"
-                    href="https://github.com/cohenyuval315/PyMicroservicesBase"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class=""
-            >
-              <div
-                class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
-              >
-                <h3
-                  class="text-xl font-semibold text-white"
-                >
-                  This Page
+                  This Website Page
                 </h3>
                 <p
                   class="text-gray-400 mt-2"
                 >
-                  Simple Web Postfolio blasted with everything
+                  Static build serving blasted with 
                 </p>
                 <div
                   class="mt-4 flex justify-between items-center"
@@ -159,6 +134,32 @@ exports[`renders homepage unchanged 1`] = `
                     target="_blank"
                   >
                     Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class=""
+            >
+              <div
+                class="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+              >
+                <h3
+                  class="text-xl font-semibold text-white"
+                >
+                  PyMicroservicesBase
+                </h3>
+                <p
+                  class="text-gray-400 mt-2"
+                />
+                <div
+                  class="mt-4 flex justify-between items-center"
+                >
+                  <a
+                    class="text-blue-500 hover:underline"
+                    href="https://github.com/cohenyuval315/PyMicroservicesBase"
+                  >
+                    GitHub
                   </a>
                 </div>
               </div>
@@ -216,7 +217,7 @@ exports[`renders homepage unchanged 1`] = `
           class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg"
         >
           <form
-            action="#"
+            action="https://formspree.io/f/xgvoyale"
             class="space-y-6"
             method="POST"
           >
@@ -325,10 +326,10 @@ exports[`renders homepage unchanged 1`] = `
         </div>
       </section>
       <div
-        class="flex justify-center space-x-8 mt-10"
+        class="flex justify-center mt-10 flex-col sm:flex-row sm:space-x-8 space-y-4 sm:space-y-0"
       >
         <div
-          class="px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
+          class="px-8 py-4 rounded-full flex items-center justify-center transform hover:scale-105 transition duration-300"
         >
           <a
             class="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-full flex items-center space-x-2 transition-transform transform hover:scale-105"
@@ -358,7 +359,7 @@ exports[`renders homepage unchanged 1`] = `
           </a>
         </div>
         <div
-          class="px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
+          class="px-8 py-4 rounded-full flex items-center justify-center transform hover:scale-105 transition duration-300"
         >
           <a
             class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 transition-transform transform hover:scale-105"
@@ -388,7 +389,7 @@ exports[`renders homepage unchanged 1`] = `
           </a>
         </div>
         <div
-          class="px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
+          class="px-8 py-4 rounded-full flex items-center justify-center transform hover:scale-105 transition duration-300"
         >
           <a
             class="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-full flex items-center space-x-2 transition-transform transform hover:scale-105"
@@ -420,24 +421,30 @@ exports[`renders homepage unchanged 1`] = `
       </div>
     </section>
     <section>
-      <script
-        charset="UTF-8"
-        crossorigin="*"
-        src="https://embed.tawk.to/property_id/default"
-      />
-      <script>
-        
-                    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-                    (function(){
-                        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                        s1.async=true;
-                        s1.src='https://embed.tawk.to/679824ef825083258e0bcf55/1iil50i8a';
-                        s1.charset='UTF-8';
-                        s1.setAttribute('crossorigin','*');
-                        s0.parentNode.insertBefore(s1,s0);
-                    })();
-                
-      </script>
+      <div>
+        <div
+          class="hidden"
+        >
+          <script
+            charset="UTF-8"
+            crossorigin="*"
+            src="https://embed.tawk.to/property_id/default"
+          />
+          <script>
+            
+                          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                          (function(){
+                              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                              s1.async=true;
+                              s1.src='https://embed.tawk.to/679824ef825083258e0bcf55/1iil50i8a';
+                              s1.charset='UTF-8';
+                              s1.setAttribute('crossorigin','*');
+                              s0.parentNode.insertBefore(s1,s0);
+                          })();
+                      
+          </script>
+        </div>
+      </div>
     </section>
   </div>
 </div>

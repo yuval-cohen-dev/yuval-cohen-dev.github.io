@@ -12,6 +12,7 @@
     "build": "next build",
     "postbuild": "",
     "prepare": "node .husky/install.mjs",
+    "spell": "npx cspell .",
     "lint-staged": "lint-staged",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -75,7 +76,9 @@
     "cspell": "8.17.3",
     "ts-node": "10.9.2",
     "webpack-obfuscator": "3.5.1",
-    "ua-parser-js":"2.0.0"
+    "ua-parser-js":"2.0.0",
+    "run":"1.5.0",
+    "serve":"14.2.4"
   },
   "prettier": {
     "jsxSingleQuote": false,

@@ -100,6 +100,7 @@ const config = async (
       trailingSlash: true,
       distDir: BUILD_DIR,
       images: {
+        unoptimized:true,
         loader: "akamai",
         path: "",
       },

@@ -7,7 +7,7 @@ This site is more than just a showcase - It’s built with the latest technologi
 
 It’s a personal website, but why not turn it into a tech showcase while I’m at it? 😎
 
-#### 🔀 Branchs:
+#### 🔀 Branches:
 - **`main` branch**: Used for development; does not contain the live site. This branch automatically builds and pushes changes to production branch.
 - **`prod` branch**: Production branch - holds the live website and is deployed via GitHub Pages.
 

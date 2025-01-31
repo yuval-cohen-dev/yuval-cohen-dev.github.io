@@ -1,6 +1,7 @@
+# npx run install
+# # npm run spell
+# # npx lint-staged
+# # npm format
+# # npm run lint -- --u
+# # npm test -- --u
 
-# npm run lint
-# npm run format
-# npm test
-
-# git update-index --again
