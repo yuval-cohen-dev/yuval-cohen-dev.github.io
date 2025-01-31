@@ -49,7 +49,7 @@ const NProgressBar = ({
       Router.events.off("routeChangeComplete", handleStop);
       Router.events.off("routeChangeError", handleStop);
     };
-  }, [Router, showOnShallow, startPosition, stopDelayMs, options]);
+  }, [showOnShallow, startPosition, stopDelayMs, options]);
   return null;
 };
 
