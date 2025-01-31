@@ -117,8 +117,8 @@ export const WEBSITE_GENERATOR = "Next.js"
 
 
 
-// export const ASSET_PREFIX = process.env.BASE_PATH || ""
-export const ASSET_PREFIX = WEB_URL
+export const ASSET_PREFIX = process.env.NEXT_PUBLIC_BASE_PATH || ""
+// export const ASSET_PREFIX = WEB_URL
 // export const ASSET_PREFIX = ""
 
 //  || "";
@@ -526,16 +526,17 @@ export const MENU_ITEMS: MenuItem[] = [
 // PROJECTS 
 export const PROJECTS: ProjectItem[] = [
   {
+    title: "This Website Page",
+    description: "Static build serving blasted with ",
+    link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
+    demoLink: "https://cohenyuval315.github.io"
+  }  
+  {
     title: "PyMicroservicesBase",
     description: "",
     link: "https://github.com/cohenyuval315/PyMicroservicesBase"
   },
-  {
-    title: "This Page",
-    description: "Simple Web Postfolio blasted with everything",
-    link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
-    demoLink: "https://cohenyuval315.github.io"
-  }
+
 ];
 
 
