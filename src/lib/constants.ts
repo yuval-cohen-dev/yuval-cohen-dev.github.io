@@ -530,7 +530,7 @@ export const PROJECTS: ProjectItem[] = [
     description: "Static build serving blasted with ",
     link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
     demoLink: "https://cohenyuval315.github.io"
-  }  
+  },
   {
     title: "PyMicroservicesBase",
     description: "",
