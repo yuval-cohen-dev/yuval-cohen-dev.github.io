@@ -34,7 +34,7 @@ export const GITHUB_REPO = `${MY_GITHUB_LINK}.github.io`;
 export const GITHUB_PAGE_LINK = `https://${USERNAME}.github.io`;
 export const MY_LINKEDIN_LINK = "https://www.linkedin.com/in/yc315/";
 
-
+export const  FORM_ID = "xgvoyale"
 export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_ADDRESS}`;
 
 export const DOMAIN = "yuval-cohen.com";
@@ -117,11 +117,14 @@ export const WEBSITE_GENERATOR = "Next.js"
 
 
 
-export const ASSET_PREFIX = process.env.BASE_PATH || ""
+// export const ASSET_PREFIX = process.env.BASE_PATH || ""
+// export const ASSET_PREFIX = WEB_URL
+export const ASSET_PREFIX = ""
+
 //  || "";
 
-const PREFIX_STATIC = ""
-const PREFIX_IMAGES = ""
+const PREFIX_STATIC = "/static"
+const PREFIX_IMAGES = "/images"
 
 // ----------------- ASSETS ---------------------
 
@@ -534,8 +537,7 @@ export const PROJECTS: ProjectItem[] = [
 
 
 // HERO
-// export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`; // HERO_JPG;
-export const HERO_IMAGE = `${ASSET_PREFIX}/static/images/hero.jpg`; // HERO_JPG;
+export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`;
 export const HERO_IMAGE_ALT = "hero";
 export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
 export const HERO_DESCRIPTION = "Software Engineer";

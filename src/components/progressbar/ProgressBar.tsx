@@ -1,14 +1,13 @@
 "use client";
-import NextNProgress from "nextjs-progressbar";
+
+import NProgressBar from "./NProgressBar";
 
 export default function ProgressBar() {
   return (
     <>
-      <NextNProgress
-        color="#4e54c8"
+      <NProgressBar
         startPosition={0.3}
         stopDelayMs={200}
-        height={4}
         showOnShallow={true}
       />
     </>

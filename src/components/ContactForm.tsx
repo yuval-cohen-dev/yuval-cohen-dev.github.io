@@ -1,12 +1,15 @@
+import { FORM_ID } from "@/lib/constants";
 import Link from "next/link";
 
 export default function ContactForm({
   title,
-  description
+  description,
+  
 }: {
   title: string;
   description: string;
 }) {
+  const action =  `https://formspree.io/f/${FORM_ID}`;
   return (
     <section
       id="contact"
@@ -22,7 +25,7 @@ export default function ContactForm({
       {/* Contact Form */}
       <div className="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
         <form
-          action="#"
+          action={action}
           method="POST"
           className="space-y-6"
         >

@@ -1,32 +1,27 @@
 "use client"
-import { useEffect } from 'react';
 import Script from 'next/script';
-import { GOOGLE_ANALYTICS_ID } from '@constants';
 
-const GoogleAnalytics = () => {
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', GOOGLE_ANALYTICS_ID);
-  }, []);
-
+const GoogleAnalytics = ({id}: {id:string | null| undefined}) => {
+  if (!id){
+    return null;
+  }
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-        strategy="afterInteractive"
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+      ></Script>
+      <Script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${id}');
+          `,
+        }}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GOOGLE_ANALYTICS_ID}');
-        `}
-      </Script>
     </>
   );
 };

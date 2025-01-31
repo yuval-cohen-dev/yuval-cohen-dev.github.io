@@ -23,15 +23,12 @@ export default function Hero({
         <Image
           src={backgroundImage}
           alt={alt}
-          layout="fill" // Make it fill the container
-          objectFit="cover" // Ensure the image covers the whole area
-          objectPosition="center" // Center the image
-          priority={true} // Load image eagerly for faster rendering
+          fill={true}
           style={{
             userSelect: "none",
             pointerEvents: "none",
-            zIndex: 0
-          }} // Make sure the background image is behind content
+            zIndex: 0,
+          }}
         />
       </div>
       <div

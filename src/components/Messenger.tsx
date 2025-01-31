@@ -1,9 +1,31 @@
 "use client";
 // @ts-ignore
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { useRef } from "react";
+import { useState, useEffect,useRef } from "react";
 
 export default function Messenger() {
+  const [isVisible, setIsVisible] = useState(false);
+  const to = "679824ef825083258e0bcf55/1iil50i8a";
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsVisible(true); // Hide on small screens
+      } else {
+        setIsVisible(false); // Show on larger screens
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check size initially
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  
+
   const tawkMessengerRef = useRef<any>(null);
   const props = {
     onLoad: () => {},
@@ -53,28 +75,33 @@ export default function Messenger() {
     customStyle: null
   };
   return (
-    <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-                    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-                    (function(){
-                        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                        s1.async=true;
-                        s1.src='https://embed.tawk.to/679824ef825083258e0bcf55/1iil50i8a';
-                        s1.charset='UTF-8';
-                        s1.setAttribute('crossorigin','*');
-                        s0.parentNode.insertBefore(s1,s0);
-                    })();
-                `
-        }}
-      />
-      <TawkMessengerReact
-        propertyId="property_id"
-        widgetId="default"
-        {...props}
-        ref={tawkMessengerRef}
-      />
-    </>
+    <div>
+      {isVisible && (    
+        <div className="hidden">
+          <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                          (function(){
+                              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                              s1.async=true;
+                              s1.src='https://embed.tawk.to/${to}';
+                              s1.charset='UTF-8';
+                              s1.setAttribute('crossorigin','*');
+                              s0.parentNode.insertBefore(s1,s0);
+                          })();
+                      `
+              }}
+            />
+            <TawkMessengerReact
+              propertyId="property_id"
+              widgetId="default"
+              {...props}
+              ref={tawkMessengerRef}
+            />
+            
+          </div>
+      )}
+    </div>    
   );
 }
