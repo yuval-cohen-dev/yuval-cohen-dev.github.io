@@ -1,5 +1,5 @@
 # # npx run install
-# # npx lint-staged
+npx lint-staged
 npm run spell
 npm run format
 npm run lint
