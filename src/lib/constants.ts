@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, ResolvedMetadata, ResolvingMetadata, MetadataRoute, Viewport, ResolvingViewport, ResolvedViewport, } from "next";
 import { Inter } from "next/font/google";
 import {
   AudioItem,
@@ -16,17 +16,35 @@ import {
 import { Manifest } from "next/dist/lib/metadata/types/manifest-types";
 import { RobotsFile, SitemapFile } from "@types";
 import { Videos } from "next/dist/lib/metadata/types/metadata-types";
+import { getAssets } from "@/utils/assets";
+import path from "path";
 
 export const YEAR = new Date().getUTCFullYear();
 export const LAST_MODIFIED = new Date();
+export const MANIFEST_FILEANAME = "manifest.json";
+
+
+// Example Usage
+
+// export const ASSETS = getAssets(path.join(process.cwd(), "public"));
+
+// console.log("Images:", ASSETS.images);
+// console.log("Audio:", ASSETS.audio);
+// console.log("Videos:", ASSETS.videos);
+// console.log("Icons:", ASSETS.icons);
+
 
 export const FIRST_NAME = "Yuval";
 export const LAST_NAME = "Cohen";
 export const FULL_NAME = `${FIRST_NAME} ${LAST_NAME}`;
 export const USERNAME = "cohenyuval315";
 export const GMAIL_ADDRESS = `${USERNAME}@gmail.com"`;
+export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_ADDRESS}`;
 export const GOOGLE_ANALYTICS_ID = "G-6XN8B6ZLMM";
+export const FORM_ID = "xgvoyale";
 export const FACEBOOK_APP_ID = "";
+export const COUNTRY_NAME = "Israel";
+export const COUNTRY_LANG = "he";
 
 export const GITHUB_LINK = "https://github.com";
 export const MY_GITHUB_LINK = `https://github.com/${USERNAME}`;
@@ -34,28 +52,20 @@ export const GITHUB_REPO = `${MY_GITHUB_LINK}.github.io`;
 export const GITHUB_PAGE_LINK = `https://${USERNAME}.github.io`;
 export const MY_LINKEDIN_LINK = "https://www.linkedin.com/in/yc315/";
 
-export const FORM_ID = "xgvoyale";
-export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_ADDRESS}`;
 
 export const DOMAIN = "yuval-cohen.com";
 export const WWW_DOMAIN = `www.${DOMAIN}`;
-
 export const WEB_WWW_DOMAIN_URL = `https://${WWW_DOMAIN}`;
 export const WEB_DOMAIN_URL = `https://${DOMAIN}`;
-
 export const IS_WWW_CANONICAL = true;
 export const WEB_URL = IS_WWW_CANONICAL ? WEB_WWW_DOMAIN_URL : WEB_DOMAIN_URL;
-
-export const TWT_CREATOR_ID = "";
 export const WEB_URL_LANGUAGES = {
   languages: {
     en: WEB_URL
   }
 };
-export const APP_CATEGORY = "";
-export const APP_CLASSIFICATION = "";
-export const APP_CREATOR = "";
-
+export const LANGUAGE = "en";
+export const PUBLISHER = FULL_NAME;
 export const REFERRER:
   | "no-referrer"
   | "origin"
@@ -63,26 +73,42 @@ export const REFERRER:
   | "origin-when-cross-origin"
   | "same-origin"
   | "strict-origin"
-  | "strict-origin-when-cross-origin" = "origin";
-export const SITE_FULL_NAME = "";
-export const SITE_SHORT_NAME = "";
-export const SITE_DESCRIPTION = "";
+  | "strict-origin-when-cross-origin" = "no-referrer-when-downgrade";
 
-export const MANIFEST_FULL_NAME = "";
-export const MANIFEST_SHORT_NAME = "";
-export const MANIFEST_DESCRIPTION = "";
-export const MANIFEST_CATEGORIES = [];
 
-export const LANGUAGE = "en";
 
+  
+export const OFFICAL = "Official Website";
 export const PORTFOLIO = "Portfolio";
+export const MY_OFFICAL = `${FULL_NAME}'s ${OFFICAL}`;
+export const MY_OFFICAL_LOWER = `${FULL_NAME}'s ${OFFICAL.toLowerCase()}`;
+export const MY_OFFICAL_WITH_EXTRA = "";
+export const TWT_CREATOR_ID = "";
+export const TWT_SITE_ID = "";
 
-export const METADATA_TITLE: string = `${FULL_NAME}'s Portfolio`;
-export const METADATA_DESCRIPTION: string = `${FULL_NAME} Portfolio`;
-export const JSONLD_TITLE: string = `${FULL_NAME}'s Portfolio`;
-export const JSONLD_DESCRIPTION: string = `${FULL_NAME} Portfolio`;
-export const OG_TITLE = "";
-export const OG_DESCRIPTION = "";
+
+export const APP_CATEGORY = "Official Website, Personal Brand, Digital Hub";
+export const APP_CLASSIFICATION = "Technology, Web Development, Software, Developer, Blog, Personal Website, Portfolio";
+export const APP_CREATOR = FULL_NAME;
+export const KEYWORDS = ["Yuval Cohen", "Official Website", "Portfolio", "Web Development", "Tech Blog", "Personal Brand", "Digital Hub", "Software Engineer"];
+
+
+export const SITE_FULL_NAME = MY_OFFICAL;
+export const SITE_SHORT_NAME = MY_OFFICAL;
+export const SITE_DESCRIPTION = `${MY_OFFICAL_LOWER} – Showcasing software engineering, development projects, and digital expertise.`;
+
+
+
+
+export const OG_DESCRIPTION = SITE_DESCRIPTION;
+
+
+export const METADATA_TITLE: string = MY_OFFICAL;
+export const METADATA_DESCRIPTION: string = `${FULL_NAME} OFFICAL`;
+export const JSONLD_TITLE: string = MY_OFFICAL;
+export const JSONLD_DESCRIPTION = SITE_DESCRIPTION;
+export const OG_TITLE = MY_OFFICAL;
+
 
 export const CHANGE_FREQUENCY:
   | "daily"
@@ -92,53 +118,40 @@ export const CHANGE_FREQUENCY:
   | "weekly"
   | "monthly"
   | "yearly"
-  | undefined = "daily";
+  | undefined = "monthly";
 export const PRIORITY: number | undefined = 0.7;
 export const SITEMAP_SIZE = 5000;
 
-const COUNTRY_NAME = "Israel";
-const COUNTRY_LANG = "he";
-
-export const WEB_URL_ARCHIVES = `${WEB_URL}/archives`;
-export const WEB_URL_ASSETS = `${WEB_URL}/assets`;
-export const WEB_URL_STATIC = `${WEB_URL}/archives`;
-export const MANIFEST_URL = `${WEB_URL}/manifest.json`;
-export const KEYWORDS = [];
-
-export const MANIFEST_DISPLAY = "browser";
-
-export const OG_SITE_NAME = "";
-export const OG_TTL = 60000;
-
-export const APP_NAME = "";
-export const GOOGLE_VERIFICATION = "1234567890";
-export const YANDEX_VERIFICATION = "1234567890";
-export const ME_VERIFICATION = "1234567890";
-export const YAHOO_VERIFICATION = "1234567890";
-
-export const TWT_DESCRIPTION = "";
-export const TWT_SITE = "";
-export const TWT_TITLE_ABS = "";
-export const TWT_TITLE_DEF = "";
-export const TWT_TITLE_TEM = "";
-export const TWT_SITE_ID = "";
-
-export const PUBLISHER = "Github";
-export const ITUNES_APP_ID = "";
-export const ITUNES_APP_ARG = "";
-export const WEBSITE_GENERATOR = "Next.js";
 
 export const ASSET_PREFIX = process.env.NEXT_PUBLIC_BASE_PATH || "";
-console.log(ASSET_PREFIX);
-// export const ASSET_PREFIX = WEB_URL
-// export const ASSET_PREFIX = ""
-
-//  || "";
-
 export const PREFIX_STATIC = "/static";
 export const PREFIX_IMAGES = "/images";
-// export const PREFIX_STATIC = ""
-// export const PREFIX_IMAGES = ""
+export const WEB_URL_ARCHIVES = [
+  // `${WEB_URL}/archives`
+];
+export const WEB_URL_ASSETS = [`${WEB_URL}${PREFIX_STATIC}`];
+export const MANIFEST_URL = `${WEB_URL}/${MANIFEST_FILEANAME}`;
+
+export const MANIFEST_DISPLAY = "standalone";
+export const MANIFEST_FULL_NAME = MY_OFFICAL_WITH_EXTRA;
+export const MANIFEST_SHORT_NAME = MY_OFFICAL;
+export const MANIFEST_DESCRIPTION = SITE_DESCRIPTION;
+export const MANIFEST_CATEGORIES = KEYWORDS;
+
+export const OG_SITE_NAME = MY_OFFICAL;
+export const APP_NAME = MY_OFFICAL;
+
+export const TWT_DESCRIPTION = "Explore Yuval Cohen's portfolio, blog, and digital presence. Insights on web development, tech, and more.";
+export const TWT_SITE = "@yuvalcohen";
+export const TWT_TITLE_ABS = MY_OFFICAL;
+export const TWT_TITLE_DEF = MY_OFFICAL;
+export const TWT_TITLE_TEM = "Yuval Cohen – {title}";
+
+export const TWT_IMAGES = []
+
+export const WEBSITE_GENERATOR = MY_OFFICAL;
+
+
 
 // ----------------- ASSETS ---------------------
 
@@ -182,7 +195,9 @@ export const MANIFEST_ICONS = [
   // }
 ];
 
-export const ICONS = [];
+export const ICONS = [
+  
+];
 
 // ALL ICONS ARE IMAGES
 export const IMAGES = [...ICONS];
@@ -193,7 +208,7 @@ export const SITEMAP_VIDEOS: Videos[] = [];
 
 export const BOOK_ITEMS: BookItem[] = [];
 export const VIDEOS_ITEMS: VideoItem[] = [];
-
+export const SITEMAP_IMAGES = [];
 export const IMAGES_OBJ: Record<string, ImageItem> = {
   favicon: {
     url: "/favicon.ico",
@@ -241,21 +256,21 @@ function normalizeImage(path: string) {
   }
 }
 
-export const ASSETS = [];
-
 export const JSONLD_IMAGE = normalizeImage(IMAGES_OBJ.hero.url);
 
 export const OG_IMAGES = [];
 export const OG_VIDEOS = [];
 export const START_UP_IMAGES = []; // normalizeImage(IMAGES_OBJ.hero.url);
 export const MANIFEST_SCREENSHOTS = [];
+const MANIFEST_ID = "/"
+const MANIFEST_START_URL = "/"
 
 export const MANIFEST: Manifest = {
-  id: "/",
+  id: MANIFEST_ID,
   name: MANIFEST_FULL_NAME,
   short_name: MANIFEST_SHORT_NAME,
   description: MANIFEST_DESCRIPTION,
-  start_url: "/",
+  start_url: MANIFEST_START_URL,
   display: MANIFEST_DISPLAY,
   orientation: "portrait",
   icons: MANIFEST_ICONS,
@@ -271,45 +286,11 @@ export const MANIFEST: Manifest = {
     "minimal-ui",
     "window-controls-overlay"
   ],
-  file_handlers: [
-    {
-      action: "**/*",
-      accept: {
-        "*/*": []
-      }
-    }
-  ],
   launch_handler: {
     client_mode: "auto"
   },
-  prefer_related_applications: false,
-  protocol_handlers: [],
-  related_applications: [
-    // {
-    // "platform": "ios",
-    // "url": "https://apps.apple.com/app/id123456789",
-    // "id": "com.example.app"
-    // }
-  ],
   // scope:"/app",
   screenshots: MANIFEST_SCREENSHOTS
-  // share_target:{
-  //   action: "/share",
-  //   method: "POST",
-  //   enctype: "multipart/form-data",
-  //   params: {
-  //     title: "name",
-  //     text: "description"
-  //   }
-  // },
-  // shortcuts: [
-  //   {
-  //     name: "About",
-  //     short_name: "About",
-  //     url: "/about",
-  //     icons: ICONS
-  //   }
-  // ]
 };
 
 export const SITEMAP_FILE: SitemapFile = [
@@ -318,13 +299,13 @@ export const SITEMAP_FILE: SitemapFile = [
     lastModified: LAST_MODIFIED,
     changeFrequency: CHANGE_FREQUENCY,
     priority: PRIORITY,
-    alternates: WEB_URL_LANGUAGES
-    // videos:SITEMAP_VIDEOS,
-    // images:IMAGE_ITEMS.filter((image=> image.url)).map((image) => image.url), // error: list of strings
+    alternates: WEB_URL_LANGUAGES,
+    images:SITEMAP_IMAGES,
+    videos:SITEMAP_VIDEOS,
   }
 ];
 
-export const ROBOTS: RobotsFile = {
+export const ROBOTS: MetadataRoute.Robots = {
   rules: {
     userAgent: "*",
     allow: ["/"],
@@ -341,41 +322,40 @@ export const INTER = Inter({
   variable: "--font-inter"
 });
 
+export const OTHER = {};
+
 export const METADATA: Metadata = {
+  metadataBase:new URL(WEB_URL),
+  applicationName: APP_NAME,
   title: METADATA_TITLE,
   description: METADATA_DESCRIPTION,
   alternates: {
-    canonical: WEB_URL
-    // languages:WEB_URL_LANGUAGES,
+    canonical: WEB_URL,
+    languages: WEB_URL_LANGUAGES.languages,
     // media,
     // types
   },
   openGraph: {
     type: "website",
-    alternateLocale: [],
+    alternateLocale: ["en_US"],
     audio: AUDIOS,
-    locale: COUNTRY_LANG,
+    locale: "en_US",
     countryName: COUNTRY_NAME,
     description: OG_DESCRIPTION,
     determiner: "auto",
     emails: [GMAIL_ADDRESS],
-    faxNumbers: [],
-    // images:OG_IMAGES,
-    phoneNumbers: [],
-    // siteName:OG_SITE_NAME,
-    // title:OG_TITLE,
-    // ttl:OG_TTL,
+    images:OG_IMAGES,
+    siteName:OG_SITE_NAME,
+    title:OG_TITLE,
+    ttl: 86400,
     url: WEB_URL
-    // videos: OG_VIDEOS
   },
   twitter: {
     card: "summary",
     creatorId: TWT_CREATOR_ID,
-    // players:[],
-
     creator: FULL_NAME,
     description: TWT_DESCRIPTION,
-    // images:IMAGES,
+    images:TWT_IMAGES,
     site: TWT_SITE,
     title: {
       absolute: TWT_TITLE_ABS,
@@ -389,26 +369,6 @@ export const METADATA: Metadata = {
     startupImage: START_UP_IMAGES,
     statusBarStyle: "black"
   },
-  applicationName: APP_NAME,
-  appLinks: {
-    android: [],
-    ios: [],
-    ipad: [],
-    iphone: [],
-    web: [],
-    windows: [],
-    windows_phone: [],
-    windows_universal: []
-  },
-  archives: [WEB_URL_ARCHIVES],
-  assets: [WEB_URL_ASSETS],
-  authors: [
-    {
-      name: FULL_NAME,
-      url: WEB_URL
-    }
-  ],
-  bookmarks: [],
   category: APP_CATEGORY,
   classification: APP_CLASSIFICATION,
   creator: APP_CREATOR,
@@ -424,27 +384,53 @@ export const METADATA: Metadata = {
   },
   generator: WEBSITE_GENERATOR,
   icons: ICONS,
-  itunes: {
-    appId: ITUNES_APP_ID,
-    appArgument: ITUNES_APP_ARG
-  },
   keywords: KEYWORDS,
-  manifest: MANIFEST_URL,
-  other: {},
+  
+  // other: OTHER,
 
+  authors: [
+    {
+      name: FULL_NAME,
+      url: WEB_URL
+    }
+  ],
+  bookmarks: [
+    WEB_URL,
+  ],  
+  manifest: MANIFEST_URL,
+  archives: WEB_URL_ARCHIVES,
+  assets: WEB_URL_ASSETS,
   publisher: PUBLISHER,
   referrer: REFERRER,
   robots: {
-    follow: true,
-    index: true
+    "max-image-preview":"large",
+    follow:true,
+    googleBot:{
+      follow:true,
+      index:true,
+      indexifembedded:true,
+      "max-image-preview":"large",
+      noarchive:false,
+      nocache:false,
+      nosnippet:false,
+      notranslate:false,
+      nositelinkssearchbox:false,
+      noimageindex:false,
+    },
+    index:true,
+    indexifembedded:true,
+    noarchive:true,
+    nocache:false,
+    noimageindex:false,
+    nositelinkssearchbox:false,
+    nosnippet:false,
+    notranslate:false
   },
-  verification: {
-    google: GOOGLE_VERIFICATION,
-    yandex: YANDEX_VERIFICATION,
-    me: ME_VERIFICATION,
-    yahoo: YAHOO_VERIFICATION,
-    other: {}
-  }
+
+  // appLinks
+  // verification: {
+  //   // google: GOOGLE_VERIFICATION, # you might need this, i used cloudflare to verify
+  // }  
   // abstract,
   // metadataBase:
 };
@@ -497,13 +483,13 @@ export const MENU_ITEMS: MenuItem[] = [
 export const PROJECTS: ProjectItem[] = [
   {
     title: "This Website Page",
-    description: "Static build serving blasted with ",
+    description: "fully equiped, automated, nextjs static built website deployed with github pages",
     link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
     demoLink: "https://cohenyuval315.github.io"
   },
   {
     title: "PyMicroservicesBase",
-    description: "",
+    description: "python generic micro services",
     link: "https://github.com/cohenyuval315/PyMicroservicesBase"
   }
 ];
@@ -528,3 +514,4 @@ export const CONTACT_DESCRIPTION = `
     You can also connect with me on GitHub and LinkedIn, or use the form below to send a message.
     Let’s talk!
 `;
+

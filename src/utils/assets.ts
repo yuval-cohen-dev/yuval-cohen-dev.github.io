@@ -1,64 +1,75 @@
 import { AudioItem, IconItem, ImageItem, VideoData } from "@/types/types";
-import fs from "fs";
-import path from "path";
 
-// Define supported file extensions for each asset type
+import path from "path";
+import sizeOf from "image-size";
+import { ISize, ISizeCalculationResult } from "image-size/dist/types/interface";
+
 const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "svg"];
 const AUDIO_EXTENSIONS = ["mp3", "wav", "ogg"];
 const VIDEO_EXTENSIONS = ["mp4", "webm", "ogg"];
-const ICON_EXTENSIONS = ["ico", "svg", "webp", "png"]; // Added icon extensions
+const ICON_EXTENSIONS = ["ico", "svg", "webp", "png"];
 
-export const getAssetsFromPublicFolder = (folderPath: string) => {
-  // Helper function to get the file extension
-  const getFileExtension = (fileName: string) =>
-    fileName.split(".").pop()?.toLowerCase();
 
-  // Helper function to get image metadata
-  const getImageMetadata = (filePath: string): ImageItem => ({
+const getFileExtension = (filename: string): string | null => {
+  return filename.includes(".") ? filename.split(".").pop()?.toLowerCase() || null : null;
+};
+
+export const getAssets = (folderPath: string) => {
+  const filename = folderPath.split("/").pop();
+  const fileExtension = folderPath.split(".").pop();
+  let dimensions: ISizeCalculationResult | ISize | { width: number, height: number } = { width: 0, height: 0 };
+  try {
+    dimensions = sizeOf(folderPath) || { width: 0, height: 0 };
+  } catch (error) {
+    console.error(`Error getting dimensions for file: ${folderPath}`, error);
+  }
+
+  const getIconMetadata = (filePath: string) => ({
     url: filePath,
-    width: 3000, // Placeholder, ideally you could use a library to get actual image dimensions
-    height: 3000, // Placeholder, same as above
-    alt: filePath, // Can be changed to match your assets' naming convention
-    type: `image/${getFileExtension(filePath)}`
+    alt: filePath,
+    type: `image/${fileExtension}`,
+    width: dimensions.width,
+    height: dimensions.height,  
+    size: `${dimensions.width}x${dimensions.height}`  
   });
 
-  // Helper function to get audio metadata
-  const getAudioMetadata = (filePath: string): AudioItem => ({
+
+  const getImageMetadata = (filePath: string) => ({
     url: filePath,
-    alt: filePath, // Similar to the image alt
-    width: 0, // No width for audio
-    height: 0, // No height for audio
-    type: `audio/${getFileExtension(filePath)}`
+    width: dimensions.width,
+    height: dimensions.height,
+    alt: filePath,
+    type: `image/${fileExtension}`
   });
 
-  // Helper function to get video metadata
-  const getVideoMetadata = (filePath: string): VideoData => ({
+  const getAudioMetadata = (filePath: string) => ({
     url: filePath,
-    alt: filePath, // Similar to the image alt
-    width: 1280, // Placeholder for video width
-    height: 720, // Placeholder for video height
-    type: `video/${getFileExtension(filePath)}`
+    alt: filePath, 
+    type: `audio/${fileExtension}`
   });
 
-  // Helper function to get icon metadata
-  const getIconMetadata = (filePath: string): IconItem => ({
+  const getVideoMetadata = (filePath: string) => ({
     url: filePath,
-    alt: filePath, // Can be changed based on naming convention
-    type: `image/${getFileExtension(filePath)}`, // E.g., image/x-icon, image/svg+xml
-    size: "16x16" // Placeholder, can be dynamically set if needed
+    alt: filePath,
+    width: dimensions.width,
+    height: dimensions.height,
+    type: `video/${fileExtension}`
   });
+
 
   const assets: {
-    images: ImageItem[];
-    audio: AudioItem[];
-    videos: VideoData[];
-    icons: IconItem[]; // Added icons array
+    images: any[];
+    audio: any[];
+    videos: any[];
+    icons: any[];
   } = {
     images: [],
     audio: [],
     videos: [],
     icons: []
   };
+  // import fs from "fs";
+  const fs = require("fs");
 
   const scanFolder = (dir: string) => {
     const files = fs.readdirSync(dir);
@@ -67,7 +78,7 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
       const filePath = path.join(dir, file);
 
       if (fs.statSync(filePath).isDirectory()) {
-        scanFolder(filePath); // Recursively scan subdirectories
+        scanFolder(filePath);
       } else {
         const extension = getFileExtension(file);
         if (IMAGE_EXTENSIONS.includes(extension || "")) {
@@ -77,21 +88,13 @@ export const getAssetsFromPublicFolder = (folderPath: string) => {
         } else if (VIDEO_EXTENSIONS.includes(extension || "")) {
           assets.videos.push(getVideoMetadata(filePath));
         } else if (ICON_EXTENSIONS.includes(extension || "")) {
-          assets.icons.push(getIconMetadata(filePath)); // Added icon processing
+          assets.icons.push(getIconMetadata(filePath)); 
         }
       }
     });
   };
 
-  scanFolder(folderPath); // Start scanning the public folder
+  scanFolder(folderPath);
 
   return assets;
 };
-
-// Example Usage
-const assets = getAssetsFromPublicFolder(path.join(__dirname, "public"));
-
-console.log("Images:", assets.images);
-console.log("Audio:", assets.audio);
-console.log("Videos:", assets.videos);
-console.log("Icons:", assets.icons); // Logs the icons found

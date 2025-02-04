@@ -51,10 +51,8 @@ export type ImageItem = {
 export type AudioItem = {
   url: string;
   alt: string;
-  height: number;
   secureUrl?: string;
   type: string; // e.g., "audio/mp3", "audio/wav"
-  width: number;
 };
 
 export type BookItem = {

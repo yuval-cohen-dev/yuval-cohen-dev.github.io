@@ -100,5 +100,10 @@
     "**/*.{css,scss,md,json,yml}": [
       "npm run format"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
