@@ -74,7 +74,7 @@ export const getAssets = (folderPath: string) => {
   const scanFolder = (dir: string) => {
     const files = fs.readdirSync(dir);
 
-    files.forEach((file) => {
+    files.forEach((file: any) => {
       const filePath = path.join(dir, file);
 
       if (fs.statSync(filePath).isDirectory()) {
