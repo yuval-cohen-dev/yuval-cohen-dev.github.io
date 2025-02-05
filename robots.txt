@@ -1,3 +1,5 @@
 User-Agent: *
 Allow: /
 
+Host: https://www.yuval-cohen.com
+Sitemap: https://www.yuval-cohen.com
