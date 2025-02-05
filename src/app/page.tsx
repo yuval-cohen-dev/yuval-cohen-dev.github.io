@@ -25,18 +25,7 @@ import { useEffect, useLayoutEffect } from "react";
 import nProgress from "nprogress";
 import Link from "next/link";
 
-function HeroExtra() {
-  return (
-    <Link
-      href={MY_GITHUB_LINK}
-      target="_blank"
-      className="bg-black text-white px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
-    >
-      <FaGithub className="mr-2 text-white" />
-      View My Work
-    </Link>
-  );
-}
+
 const SCROLL_UP_THRESHOLD_PERCENTAGES = 40;
 
 export default function Home() {
@@ -63,7 +52,14 @@ export default function Home() {
           text={HERO_TEXT}
           alt={HERO_IMAGE_ALT}
         >
-          <HeroExtra />
+            <Link
+              href={MY_GITHUB_LINK}
+              target="_blank"
+              className="bg-black text-white px-8 py-4 rounded-full flex items-center transform hover:scale-105 transition duration-300"
+            >
+              <FaGithub className="mr-2 text-white" />
+              View My Work
+            </Link>
         </Hero>
       </Motion>
 

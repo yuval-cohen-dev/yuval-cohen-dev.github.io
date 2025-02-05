@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 interface LogoWithNameProps {
   src: any;
@@ -15,8 +17,21 @@ const LogoWithName: React.FC<LogoWithNameProps> = ({
   src,
   alt
 }) => {
+  const onLogoClick = async (e:any) => {
+    e.preventDefault();
+    redirect("/");
+
+  }
   return (
-    <div className="flex items-center sm:w-auto w-full justify-center sm:justify-start">
+    <div 
+      className="flex items-center sm:w-auto w-full justify-center sm:justify-start" 
+      onClick={onLogoClick}
+      style={{
+        pointerEvents:"all",
+        cursor:"pointer",
+      }}
+    >
+        
       <Image
         src={src}
         alt={alt}

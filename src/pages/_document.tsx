@@ -1,46 +1,19 @@
-import {
-  GOOGLE_ANALYTICS_ID,
-  JSON_LD_SCHEMA,
-  LANGUAGE,
-  LINK_TAGS,
-  META_TAGS
-} from "@constants";
 import { Html, Head, Main, NextScript } from "next/document";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import JsonLd from "@/components/JsonLd";
-import MetaTags from "@/components/MetaTags";
-import LinksTags from "@/components/LinkTags";
+import JSONLD from "@/app/json-ld";
+import GA from "@/app/ga";
+import LINK from "@/app/links";
+import META from "@/app/metas";
+import NOSCRIPT from "@/app/no-script";
 
 export default function Document() {
   return (
-    <Html lang={LANGUAGE}>
+    <Html lang={"en"}>
       <Head>
-        <link
-          rel="icon"
-          href="https://www.yuval-cohen.com/favicon.ico"
-        />
-        <link
-          rel="icon"
-          href="https://www.yuval-cohen.com/static/images/hero.jpg"
-        />
-
-        <noscript>
-          <meta
-            http-equiv="refresh"
-            content="0;url=/no-javascript"
-          />
-        </noscript>
-        <noscript>
-          <p>
-            Your browser does not support JavaScript or it is disabled. Some
-            features of this website may not work properly without JavaScript
-            enabled.
-          </p>
-        </noscript>
-        <LinksTags linkTags={LINK_TAGS} />
-        <MetaTags metaTags={META_TAGS} />
-        <JsonLd schema={JSON_LD_SCHEMA} />
-        <GoogleAnalytics id={GOOGLE_ANALYTICS_ID} />
+        <NOSCRIPT/>
+        <LINK/>
+        <META/>
+        <JSONLD/>
+        <GA/>
       </Head>
       <body>
         <Main />

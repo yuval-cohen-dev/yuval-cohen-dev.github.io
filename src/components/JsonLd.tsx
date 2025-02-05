@@ -1,16 +1,14 @@
-export default function JsonLd({
-  schema
-}: {
-  schema: object | undefined | null;
-}) {
-  if (!schema) {
+import Script from "next/script";
+
+export default function JsonLd({data} : {data: object}) {
+  if (!data) {
     return null;
   }
   return (
-    <script
+    <Script
       id="json-ld-schema"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />    
   );
 }

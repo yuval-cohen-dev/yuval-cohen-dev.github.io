@@ -1,10 +1,9 @@
-export default function NoScript({}) {
+export default function NoScript({children}: Readonly<{
+    children: React.ReactNode;
+  }>) {
   return (
     <noscript>
-      <meta
-        http-equiv="refresh"
-        content="0;url=/no-javascript"
-      />
+      {children}
     </noscript>
   );
 }
