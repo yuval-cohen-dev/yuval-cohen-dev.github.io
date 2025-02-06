@@ -198,7 +198,7 @@ export const metadata: Metadata = {
   //   appId: FACEBOOK_APP_ID
   // },
   manifest: `${WEB_URL}/manifest.webmanifest`,
-  keywords: ["Yuval Cohen", "Official Website", "Portfolio", "Web Development", "Tech Blog", "Personal Brand", "Digital Hub", "Software Engineer"],
+  keywords: ["Yuval", "Cohen", "Yuval Cohen .com","Yuval Cohen", "Official Website", "Portfolio", "Web Development", "Tech Blog", "Personal Brand", "Digital Hub", "Software Engineer"],
   authors: [
     {
       name: FULL_NAME,

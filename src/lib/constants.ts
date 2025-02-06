@@ -42,6 +42,7 @@ export const FIRST_NAME = "Yuval";
 export const LAST_NAME = "Cohen";
 export const FULL_NAME = `${FIRST_NAME} ${LAST_NAME}`;
 export const USERNAME = "cohenyuval315";
+export const WEB_USERNAME = "yuval-cohen-dev"
 export const GMAIL_ADDRESS = `${USERNAME}@gmail.com"`;
 export const MAIL_TO_GMAIL_LINK = `mailto:${GMAIL_ADDRESS}`;
 export const GOOGLE_ANALYTICS_ID = "G-6XN8B6ZLMM";
@@ -51,10 +52,10 @@ export const COUNTRY_NAME = "Israel";
 export const COUNTRY_LANG = "he";
 
 export const GITHUB_LINK = "https://github.com";
-export const MY_GITHUB_LINK = `https://github.com/${USERNAME}`;
+export const MY_GITHUB_LINK = `https://github.com/${WEB_USERNAME}/`;
 export const GITHUB_REPO = `${MY_GITHUB_LINK}.github.io`;
-export const GITHUB_PAGE_LINK = `https://${USERNAME}.github.io`;
-export const MY_LINKEDIN_LINK = "https://www.linkedin.com/in/yc315/";
+export const GITHUB_PAGE_LINK = `https://${WEB_USERNAME}.github.io`;
+export const MY_LINKEDIN_LINK = `https://www.linkedin.com/in/${WEB_USERNAME}/"`
 
 
 export const DOMAIN = "yuval-cohen.com";
@@ -75,12 +76,11 @@ export const PORTFOLIO = "Portfolio";
 export const MY_OFFICIAL = `${FULL_NAME}'s ${OFFICAL}`;
 export const MY_OFFICIAL_LOWER = `${FULL_NAME}'s ${OFFICAL.toLowerCase()}`;
 export const MY_OFFICIAL_WITH_EXTRA = `${MY_OFFICIAL}`;
-export const TWT_CREATOR_ID = "@YwblK";
+export const TWT_CREATOR_ID = "@yuval_cohen_dev";
 
 export const SITE_FULL_NAME = MY_OFFICIAL;
 export const SITE_SHORT_NAME = MY_OFFICIAL;
-export const SITE_DESCRIPTION = `${MY_OFFICIAL_LOWER} – Showcasing software engineering, development projects, and digital expertise.`;
-
+export const SITE_DESCRIPTION = `${FULL_NAME} – Official Website of ${FULL_NAME}, a Software Engineer and Digital Expert. Explore ${FULL_NAME}'s Digital Footprint, including software development projects, engineering expertise, and innovative digital solutions.`;
 
 
 export const ASSET_PREFIX = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -91,33 +91,12 @@ export const ASSETS_URL = `${WEB_URL}${PREFIX_STATIC}`
 export const IMAGES_URL = `${ASSETS_URL}${PREFIX_IMAGES}`
 
 
-export const TWT_SITE = "@yuvalcohenofficial";
+export const TWT_SITE = "@yuval-cohen-official";
 
 
 
 
 // ----------------- ASSETS ---------------------
-
-
-export const IMAGES_OBJ: Record<string, ImageItem> = {
-  logo: {
-    url: `${ASSET_PREFIX}/icon.png`,
-    width: 48,
-    height: 48,
-    alt: "portfolio logo",
-    type: "image/png"
-  },
-  hero: {
-    url: `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`,
-    width: 3000,
-    height: 2000,
-    alt: "hero background",
-    type: "image/jpg"
-  }
-};
-
-
-
 
 
 
@@ -142,7 +121,7 @@ export const FOOTER_TEXT = `© ${YEAR} ${FULL_NAME}. All rights reserved.`;
 // APP HEADER
 export const LOGO_ALT: string = "logo";
 export const LOGO_TEXT: string = `${FULL_NAME}`;
-export const LOGO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/logo.png`; //LOGO_PNG ;
+export const LOGO_IMAGE = `${IMAGES_URL}/logo.png`; //LOGO_PNG ;
 export const MENU_ITEMS: MenuItem[] = [
   { name: "Projects", link: "#projects" },
   { name: "About", link: "#about" },
@@ -165,16 +144,16 @@ export const PROJECTS: ProjectItem[] = [
 ];
 
 // HERO
-export const HERO_IMAGE = `${ASSET_PREFIX}${PREFIX_STATIC}${PREFIX_IMAGES}/hero.jpg`;
+export const HERO_IMAGE = `${IMAGES_URL}/hero.jpg`;
 
-export const HERO_IMAGE_ALT = "hero";
+export const HERO_IMAGE_ALT = "Yuval Cohne's Hero";
 export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
-export const HERO_DESCRIPTION = "Software Engineer";
+export const HERO_DESCRIPTION = "Yuval Cohen's Software Engineer Backgrond Image";
 
 // ABOUT
 export const ABOUT_TITLE = "About Me";
 export const ABOUT_TEXT = `
-    I’m a software engineer specializing in web development, python, and software design. I enjoy solving problems, learning new technologies, networking and connecting to others! .
+    I’m Yuval Cohen a Software Engineer specializing in web development, python, and software design. I enjoy solving problems, learning new technologies, networking and connecting to others! .
 `;
 
 // CONTACT
