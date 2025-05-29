@@ -136,11 +136,11 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
     demoLink: "https://cohenyuval315.github.io"
   },
-  {
-    title: "PyMicroservicesBase",
-    description: "python generic micro services",
-    link: "https://github.com/cohenyuval315/PyMicroservicesBase"
-  }
+  // {
+  //   title: "PyMicroservicesBase",
+  //   description: "python generic micro services",
+  //   link: "https://github.com/cohenyuval315/PyMicroservicesBase"
+  // }
 ];
 
 // HERO
@@ -153,7 +153,7 @@ export const HERO_DESCRIPTION = "Yuval Cohen's Software Engineer Backgrond Image
 // ABOUT
 export const ABOUT_TITLE = "About Me";
 export const ABOUT_TEXT = `
-    I’m Yuval Cohen a Software Engineer specializing in web development, python, and software design. I enjoy solving problems, learning new technologies, networking and connecting to others! .
+    I’m Yuval Cohen a Software Engineer. I enjoy solving problems, learning new technologies, networking and connecting to others! .
 `;
 
 // CONTACT
