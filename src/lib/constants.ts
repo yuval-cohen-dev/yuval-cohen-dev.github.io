@@ -148,7 +148,7 @@ export const HERO_IMAGE = `${IMAGES_URL}/hero.jpg`;
 
 export const HERO_IMAGE_ALT = "Yuval Cohne's Hero";
 export const HERO_TEXT = `Hi I'm ${FULL_NAME}`;
-export const HERO_DESCRIPTION = "Yuval Cohen's Software Engineer Backgrond Image";
+export const HERO_DESCRIPTION = "Software Engineer";
 
 // ABOUT
 export const ABOUT_TITLE = "About Me";
