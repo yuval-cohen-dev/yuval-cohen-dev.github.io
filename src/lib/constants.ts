@@ -134,7 +134,7 @@ export const PROJECTS: ProjectItem[] = [
     title: "This Website Page",
     description: "fully equiped, automated, nextjs static built website deployed with github pages",
     link: "https://github.com/cohenyuval315/cohenyuval315.github.io",
-    demoLink: "https://cohenyuval315.github.io"
+    demoLink:WEB_URL
   },
   // {
   //   title: "PyMicroservicesBase",
